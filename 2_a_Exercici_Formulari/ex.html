@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ex.js"></script>
+</head>
+<body style="display: flex; align-items: center; flex-direction: column;">
+    <form>
+
+        <fieldset style="display: inline-flex; flex-direction: column;">
+        <legend>Datos personales</legend>
+            <span id="a1"></span> <br>
+            Nom: <br> <input type='text' id='nom'>
+            Cognoms: <br> <input type='text' id='cognoms'>
+            Dni: <br> <input type='text' id='dni'>
+            Zodiac: <br> <input list="zodiacList" id="zodiac"><br>
+            <input type="submit" value="submit" id="submit"><br>
+            <input type="reset" value="reset" id="reset">
+        </fieldset>
+    </form>
+    <form>
+        <fieldset style="display: inline-flex; flex-direction: column;">
+        <legend>Datos de connexion</legend>
+            <span id="a2"></span> <br>
+            Nom usuari: <br> <input type='text' id='nom_usuari'> 
+            Contrasenya: <br> <input type='password' id='password1'>
+            Repetix contrasenya: <br> <input type='password' id='password2'> <br>
+            <input type="submit" value="submit" id="submit2"><br>
+            <input type="reset" value="reset" id="reset2">
+        </fieldset>
+    </form>
+</body>
+</html>
+<datalist id="zodiacList">
+    <option>Aries</option>
+    <option>Tauro</option>
+    <option>Géminis</option>
+    <option>Cáncer</option>
+    <option>Leo</option>
+    <option>Virgo</option>
+    <option>Libra</option>
+    <option>Escorpio</option>
+    <option>Sagitario</option>
+    <option>Capricornio</option>
+    <option>Acuario</option>
+    <option>Piscis</option>
+</datalist>
