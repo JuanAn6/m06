@@ -70,7 +70,15 @@ function f_validarForm1(evt)
         document.getElementById("a1").style.color ="green";
         valides = true;
     }else{
-        document.getElementById("a1").textContent ="Dades no valides";
+        if(!er3.test(dni)){
+            document.getElementById("a1").textContent ="Dni no valid";
+        }
+        if(!er2.test(cognoms)){
+            document.getElementById("a1").textContent ="Congoms no valids";
+        }
+        if(!er2.test(nom)){
+            document.getElementById("a1").textContent ="Nom no valid";
+        }
         document.getElementById("a1").style.color ="red";
     }
 
@@ -106,10 +114,14 @@ function f_validarForm2(evt)
         document.getElementById("a2").style.color ="green";
         valides = true;
     }else{
+        if(er1.test(nom_usuari)){
+            document.getElementById("a2").textContent ="Les contrasenyes han de ser iguals";
+        }
         if(password1.length <= 6){
             document.getElementById("a2").textContent ="Dades no valides, la contrasenya ha de tenir més de 6 caracters";
-        }else{  
-            document.getElementById("a2").textContent ="Dades no valides";
+        }
+        if(er1.test(nom_usuari)){
+            document.getElementById("a2").textContent ="Nom d'usuari no valid";
         }
         document.getElementById("a2").style.color ="red";
     }
