@@ -23,8 +23,7 @@ function f_main()
     document.getElementById("reset2").addEventListener("click", ()=>{
         document.getElementById("a2").textContent = "";
     });
-    document.getElementById("a1").style.color ="red";
-    document.getElementById("a2").style.color ="red";
+    
 }
 
 
@@ -42,12 +41,37 @@ function f_validarForm1(evt)
     let er2 = new RegExp("[A-Z][a-z]+\\s[A-Z][a-z]+");
     let er3 = /\d{8}[TRWAGMYFPDXBNJZSQVHLCKE]{1}/;
 
+    let zodiacs = ["Aries",
+    "Tauro",
+    "Géminis",
+    "Cáncer",
+    "Leo",
+    "Virgo",
+    "Libra",
+    "Escorpio",
+    "Sagitario",
+    "Capricornio",
+    "Acuario",
+    "Piscis"];
+    let zodiacValid = false;
+    let i = 0;
+    while(i < zodiacs.length && zodiacs[i] != zodiac){
+        i++;
+    }
+    
+    if(i < zodiacs.length){
+        zodiacValid = true;
+    }
+    
     let valides = false;
-    if( er1.test(nom) && er2.test(cognoms) && er3.test(dni) && (zodiac == "Aries" || zodiac == "Tauro" || zodiac == "Géminis" || zodiac == "Cáncer" || zodiac == "Leo" || zodiac == "Virgo" || zodiac == "Libra" || zodiac == "Escorpio" || zodiac == "Sagitario" || zodiac == "Capricornio" || zodiac == "Acuario" || zodiac == "Piscis")){
+    //if( er1.test(nom) && er2.test(cognoms) && er3.test(dni) && (zodiac == "Aries" || zodiac == "Tauro" || zodiac == "Géminis" || zodiac == "Cáncer" || zodiac == "Leo" || zodiac == "Virgo" || zodiac == "Libra" || zodiac == "Escorpio" || zodiac == "Sagitario" || zodiac == "Capricornio" || zodiac == "Acuario" || zodiac == "Piscis")){
+    if(er1.test(nom) && er2.test(cognoms) && er3.test(dni) && zodiacValid){
         document.getElementById("a1").textContent ="Dades valides";
+        document.getElementById("a1").style.color ="green";
         valides = true;
     }else{
         document.getElementById("a1").textContent ="Dades no valides";
+        document.getElementById("a1").style.color ="red";
     }
 
     if(valides){
@@ -59,19 +83,7 @@ function f_validarForm1(evt)
             'zodiac' : zodiac,
         }
         
-        let json = {'dades' : []};
-        
-        let jsontemp = localStorage.getItem("dades");
-        
-        if(jsontemp != null){
-            json = JSON.parse(jsontemp);
-            json.dades.push(objJson);
-            localStorage.setItem("dades", JSON.stringify(json));
-        }else{
-            json.dades.push(objJson);
-            localStorage.setItem("dades", JSON.stringify(json));
-        }
-        console.log(json);
+        f_json(objJson, "dades");
     }
 
 }
@@ -91,6 +103,7 @@ function f_validarForm2(evt)
 
     if( er1.test(nom_usuari) && password1.length > 6 &&  password1 == password2){
         document.getElementById("a2").textContent ="Dades valides";
+        document.getElementById("a2").style.color ="green";
         valides = true;
     }else{
         if(password1.length <= 6){
@@ -98,7 +111,7 @@ function f_validarForm2(evt)
         }else{  
             document.getElementById("a2").textContent ="Dades no valides";
         }
-        
+        document.getElementById("a2").style.color ="red";
     }
 
     if(valides){
@@ -107,20 +120,49 @@ function f_validarForm2(evt)
             'nom_usuari' : nom_usuari,
             'password' : password1,
         }
-        
-        let json = {'dades' : []};
-        
-        let jsontemp = localStorage.getItem("dades2");
-        
-        if(jsontemp != null){
-            json = JSON.parse(jsontemp);
-            json.dades.push(objJson);
-            localStorage.setItem("dades2", JSON.stringify(json));
-        }else{
-            json.dades.push(objJson);
-            localStorage.setItem("dades2", JSON.stringify(json));
-        }
-        console.log(json);
+
+        f_json(objJson, "dades2");
     }
 
+}
+
+function f_json(objJson, dades)
+{
+    let json = {'dades' : []};
+        
+    let jsontemp = localStorage.getItem(dades);
+        
+    if(jsontemp != null){
+        json = JSON.parse(jsontemp);
+        json.dades.push(objJson);
+        localStorage.setItem(dades, JSON.stringify(json));
+
+        console.log("objeto json para mostrar en pantalla:");
+        console.log(json.dades[json.dades.length -2]);
+
+        mostrarJson(json.dades[json.dades.length -2]);
+        let temp = setTimeout(()=>{
+            document.getElementById("mostrar").innerHTML = "";
+        }, 10000);
+
+    
+    }else{
+        json.dades.push(objJson);
+        localStorage.setItem(dades, JSON.stringify(json));
+        
+        console.log("no hi habia dades abans de aquesta");
+    }
+    console.log(json);
+}
+
+function mostrarJson(json)
+{
+    let mostrar = document.getElementById("mostrar");
+
+    let text = "";
+    let keys = Object.keys(json);
+    keys.forEach(k => {
+        text += k+": "+json[k]+" <br>";
+    });
+    mostrar.innerHTML = text;
 }
