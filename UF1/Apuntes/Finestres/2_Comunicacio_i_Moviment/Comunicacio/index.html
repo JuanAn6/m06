@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>FINESTRA PARE</title>
+  </head> 
+  <body>
+ <h1>COMUNICACIÓ ENTRE FINESTRES</h1>
+ <p>
+ Per comprovar si la finestra actual ha estat creada per codi es pot fer així:
+    <blockquote><code>
+        if (window.opener)
+        {
+            <span style='color:green'>// La finestra ha estat oberta per un script</span>
+        }
+    </code></blockquote>
+ </p>
+ <p>Prem el botó per obrir una nova pestanya<input type='button' value='Obrir pestanya' id='bObrir'><br></p>
+ <p>Si s'intenta tornar a obrir la finestra si ja està oberta, veure com s'edita el contingut de la sub-finestra.</p>
+ <p>Prem el botó per tancar la pestanya si està oberta<input type='button' value='Tancar pestanya' id='bTancar'></p>
+ <div id='valors1'>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded',main);
+        function main()
+        {
+            document.getElementById('bObrir').addEventListener('click',obrirPestanya);
+            document.getElementById('bTancar').addEventListener('click',tancar);
+            window.addEventListener('beforeunload',tancarFills);
+        }
+        let f;
+        function obrirPestanya()
+        {
+            if (f == null || f.closed)
+                f = window.open('./finestraFill.html');
+            else
+			{
+                f.document.getElementById('valorsFF').textContent = 'Ja està oberta la finestra!';
+				f.document.getElementById('valorsFF').style.color = 'red';
+			}
+		}
+        function tancar()
+        {
+          if (f!=null && !f.closed)
+            f.close();
+          else
+            document.getElementById('valors1').innerHTML = "<span  style='color:red'>La subfinestra no es pot tancar, perquè no ha estat oberta</span>";
+        }
+        function tancarFills()
+        {
+            tancar();
+        }
+        
+    </script>
+</body>
+</html>

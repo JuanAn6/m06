@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    UF 2 - FUNCIONS - PROPIETATS
+    </title>   
+</head>
+<body>
+    <h2>PROPIETATS DE LES FUNCIONS</h2>
+    <ul>
+        <li>arguments: És un array dels paràmetres que ha rebut la funció. La funció pot estar declarada sense arguments però pot ser cridada amb els arguments que es desitgi. No tenen efecte les modificacions d’arguments quan es torna al punt des d’on s’ha cridat la funció. 'Es passen per valor'.</li>
+        <li>length: retorna la quantitat de paràmetres que s’han indicat en el moment de definir la funció.</li>
+    </ul>
+    <b>arguments</b> és un array que existeix dins de qualsevol funció, per tant, <b>arguments</b> és una paraula clau, evitar-ne l’ús com a nom de variable.
+    <h2>Exemple d'ús de les propietats de les funcions</h2>
+    <h2>Paràgraf 1</h2>
+    <p id='a'></p>
+    <h2>Paràgraf 2</h2>
+    <p id='b'></p>
+    <h2>Paràgraf 3</h2>
+    <p id='c'></p>
+    <script type="text/javascript" language="javascript" src='./2propietats.js'>    </script>
+    <h2>Argument vs. Paràmetre</h2>
+    <p>Molt sovint es consideren sinònims, però tècnicament no volen dir el mateix.<br>
+    En programació, els arguments són els valors realment subministrats a una funció o procediment quan aquest és invocat o cridat. <br>
+    Per tant, els arguments poden variar en cada crida d’una funció. En canvi, els paràmetres formen part de la definició estàtica d’un procediment.
+    </p>
+    <h2>QUANTITAT D'ARGUMENTS EQUIVOCADA</h2>
+    <ol>
+        <li>Si la quantitat és superior als esperats: JS ignorarà els paràmetres sobrants</li>
+        <li>Si la quantitat és menor als esperats: JS assignarà undefined als paràmetres.</li>
+    </ol>
+    En totes dues situacions JS executarà la funció sense donar cap missatge d’error, a part dels possibles resultats estranys que es puguin dur a terme.
+    <h2>SOBRECARREGA DE FUNCIONS EN JAVASCRIPT</h2>
+    <p>
+    JS no permet la sobrecàrrega de funcions entesa com la permeten altres llenguatges (p.e.: C++, JAVA,....) És a dir, no permet definir més d'un cop una funció amb el mateix nom però una quantitat diferent de paràmetres.<br>
+    Però si que permet invocar la funció amb una quantitat indeterminada d'arguments, així com de tipus diferents, per tant, gràcies a l'ús de la propietat "arguments" existent en qualsevol objecte de tipus funció es pot fer que aquesta es comporti de manera diferent depenen de la quantitat de paràmetres i/o els tipus d'aquests.
+    </p>
+</body>
+</html>

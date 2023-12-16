@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta name="description" content="Web learning">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+		<meta name="author" content="Ester Marsal Roca">
+		<meta charset="UTF-8">
+		<title>BONES PRÀCTIQUES</title>
+		<script type="text/javascript">
+            document.addEventListener('DOMContentLoaded',f_main);
+            window.addEventListener('beforeunload',f_abansTancar)
+            let f;
+
+            function f_main()
+            {
+                    document.getElementById('boto').addEventListener('click',f_obrirFinestra);
+            }
+
+
+            function f_obrirFinestra()
+            {
+                if (f == null || f.closed)
+                {
+                    f = window.open("./subFinestre.html","","width=1000,height=500,top=100,left=0");
+                    document.getElementById('info').innerHTML = "Mides de la finestra "+window.innerWidth+" x "+window.innerHeight;
+                    document.getElementById('info').innerHTML += "<br>Distància al marge "+window.screenX+" x "+window.screenY;
+                    window.addEventListener('resize',f_canviMida);
+                    i=0;
+                } else{
+                    f.focus();
+                }
+            }
+
+            function f_canviMida()
+            {
+                document.getElementById('info').innerHTML = "Mides de la finestra "+window.innerWidth+" x "+window.innerHeight;
+                document.getElementById('info').innerHTML += "<br>Distància al marge "+window.screenX+" x "+window.screenY;
+            }
+
+            function f_abansTancar()
+            {
+                if (f!=null && !f.closed)
+                {
+                    f.close();
+                }
+            }
+        </script>
+	</head>
+	<body>
+		<input type='button' value='obrir una finestra nova' id="boto"><br>
+		<p id="info"></p>
+
+	</body>
+</html>	

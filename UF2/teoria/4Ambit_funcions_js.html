@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    UF 2- FUNCIONS - Àmbit d'existència de les funcions
+    </title>   
+    <script type="text/javascript" language="javascript">
+    </script>
+</head>
+<body> 
+    <script type="text/javascript" language="javascript">
+    document.addEventListener('DOMContentLoaded',function () {AI(0);});<!--3ra-->
+    AI(2); // 1ra 
+    function AI(x)
+    {
+      function BI(y) {
+        function CI(z) {
+            console.info(x+y+z);
+        }
+        CI(3);
+      }  
+      BI(2);
+    }
+    AI(3); // 2a 
+	// aquí no es coneix ni CI ni BI;
+    </script>
+    <p>En aquest exemple, cal observar dues coses importants:
+        <ol>
+            <li>Les 3 crides que hi ha de la funció AI, i l’ordre d’execució que realitza JavaScript (indiferentment que l’script estigui en l’etiqueta &lt;head&gt; o &lt;body&gt;</li>
+            <li>Les 3 funcions AI,BI,CI una dins l’altre, respectivament.</li>
+        </ol>
+        Pel què fa ha aquest segon aspecte, cal entendre com és l’accés dels paràmetres: CI té accés al paràmetre ‘y’ de la funció BI i al argument ‘x’ de la funció AI. Això es pot fer perquè:
+        <ol>
+            <li>BI està dins d’AI i per tant, pot accedir als paràmetres (x) i variables d’AI.</li>
+            <li>CI està dins de BI, per tant, pot accedir a tots els paràmetres(y) i variables que té BI.</li>
+        Cal tenir present, que el contrari no pot succeir, és a dir, AI no pot accedir a les variables locals de BI. Ni la funció BI pot accedir a les variables locals de CI.
+    </p>
+</body>
+</html>

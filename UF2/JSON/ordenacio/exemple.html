@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="..............">
+    <title>
+    ordenació múltiple
+    </title>   
+	<script src='./exemple.js'></script>
+</head>
+<body>
+    <p>Objectiu: saber ordenar un array d'objectes JSON per més d'un camp en cas d'empats.</p>
+	<p>El següent array d'objecte JSON té els camps colA i colB i l'objectiu és tenir-lo ordenat pel colA i en cas d'empat pel colB.
+	<pre>
+		let fruits = [
+			  {colA: 'apple', colB: 'red delicious'},
+			  {colA: 'pear', colB: 'red anjou'},
+			  {colA: 'orange', colB: 'navel'},
+			  {colA: 'orange', colB: 'blood'},
+			  {colA: 'pear', colB: 'green anjou'},
+			  {colA: 'apple', colB: 'granny smith'},
+			  {colA: 'orange', colB: 'clementine'}
+			];
+	</pre>
+	</p>
+	<p>Per aconseguir aquest objectiu primer cal ordenar pel colB i després colA.</p>
+	<p>Ordenat per colB:
+		<pre id='fase1'>
+		</pre>
+	</p>
+	<p>Ordenat per colA i en cas d'empat per colB:
+		<pre id='fase2'>
+		</pre>
+	</p>
+	
+</body>
+</html>

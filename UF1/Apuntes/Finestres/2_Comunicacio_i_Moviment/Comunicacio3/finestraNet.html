@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>FINESTRA NET</title>
+  </head> 
+  <body>
+    <p><input type='button' value='MODIFICAR PESTANYA FILL' id='bEditar'></p>
+   
+    <p>Des de la finestra NET es pot editar la finestra FILL mitjançant la propietat: window opener</p>
+    <script>
+    document.addEventListener('DOMContentLoaded',main);
+	let ff = window.opener;
+    function main()
+    {
+        document.getElementById('bEditar').addEventListener('click',editar);
+    }
+     function editar()
+     {
+        ff.document.getElementById('valorsFF').textContent = ' Passant informació del Net al Fill';
+		window.opener.document.getElementById('valorsFF').style.color = 'blue';	
+     }
+    </script>
+</body>
+</html>

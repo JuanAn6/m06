@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+		<meta charset='UTF-8'>
+		<title>JSON</title>
+		<script src="main3.js"></script>
+		<script src="superheroes.json"></script>
+    </head>
+    <body>
+	<p>S’adjunta l’arxiu superheroes.json, dins seu hi ha una variable JSON que cal tractar.</p>
+	<p>En carregar aquesta web, mostrar dins l'etiqueta out les dades de la variable JSON segons s'indica tot seguit</p>
+	<p>
+	Primer una taula:
+		<ol>
+			<li>La taula tindrà 2 columnes i 5 files (no cal titol per les columnes)</li>
+			<li>La primera columna amb els noms dels 5 primers camps de la variable JSON.</li>
+			<li>La segona columna amb els valors dels 5 primers camps de la variable JSON.</li>
+		</ol>
+	</p>
+	<p>
+		Segon: mostrar la informació de l'array <b>members</b>, en concret, per cada posició de <b>members</b> mostrar  els 3 primer camps, dins d'una estructura amb etiqueta dl, cada nom de camp en una etiqueta dt i cada valor en una etiqueta dd <a href='https://developer.mozilla.org/ca/docs/Web/HTML/Element/dl'>Veure exemple d'ús de l'etiqueta dl i les seves filles: dt i dd)</a>.
+	</p>
+	<p>
+		Tercer: mostrar el camp "powers" de cada <b>members</b> (s'ha de mostrar després de cada dd de cadascun dels <b>members</b>) en forma de llista ordenada, etiqueta ol, amb els noms dels "powers" ordenats alfabèticament.
+	</p>
+        <p id="out"></p>
+    </body>
+</html>

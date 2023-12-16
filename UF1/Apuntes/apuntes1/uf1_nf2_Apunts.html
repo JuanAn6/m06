@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>APUNTS</title>
+	 <style>
+		body {
+		text-align: left;
+		font-family: "Helvetica", "Arial Black", "Impact", "Lucida Sans Unicode", "Tahoma", "Verdana", "Lucida Console";
+		font-size: medium;
+		background-color: #EAFAF1;
+		}
+		kbd{
+		font-size: large;
+		color: blue;
+		}
+    </style>
+	<script>
+        alert("Hola! Benvinguts a la classe de DAW2 amb AC");
+	</script>
+    <script type='text/javascript' language='javascript' src='./uf1_nf2_Apunts.js'></script>
+  </head> 
+  <body>
+  <noscript>
+		Eps!!! el teu navegador no soporta JS
+  </noscript>
+  <h1>mòdul 6: Desenvolupament Web en entorn Client</h1>
+  <h2>Continguts</h2>
+  <ol>
+	<li>Aplicació i verificació de la sintaxi del llenguatge</li>
+	<ol>
+		<li><a href="#p1">Selecció de llenguatge de programació de clients web.</a></li>
+		<li><a href="#p2">Declaració de dades.</a></li>
+		<li><a href="#p3">Tipus de dades. </a></li>
+		<li><a href="#p4">Assignacions.</a></li>
+		<li><a href="#p5">Operadors.</a></li>
+		<li><a href="#p6">Sentències.</a></li>
+		<li><a href="#p7">Decisions.</a></li>
+		<li><a href="#p8">Bucles.</a></li>
+		<li><a href="#p9">Comentaris al codi.</a></li>
+		<li><a href="#p10">Eines per programar, provar i depurar el codi</a></li>
+	</ol>
+  </ol>
+  <h2 id='p1'>Selecció de llenguatge de programació de clients web</h2>
+  <p>
+	<h2> JavaScript</h2>
+	<p>
+	Encara que alguns elements de sintaxis recordin a JAVA, no té res a veure, es va escollir aquest nom per raons de màrqueting, doncs estava de moda.
+	</p><p>
+	És un llenguatge basat en l’estàndard ECMAScript de ECMA (organització diferent de W3C)
+	</p><p>
+	Hi ha lleugeres diferències en la implementació de JS dels navegadors, encara que actualment tots són bastant compatibles entre sí.
+	</p><p>
+	Inicialment era un llenguatge interpretat, però actualment s’executa amb màquines virtuals en els navegadors (guanyant en velocitat d’execució i eficiència de memòria)
+	</p><p>
+	<u>Característiques de Javascript</u>
+	</p><p>
+	<ul>
+	<li>Interpretat: no requereix compilació, l’ intèrpret és el navegador de l’usuari.</li><li>
+	Tipat dèbil (tipus de dades) /  dinàmic: és una característica habitual en els llenguatge de script), no cal declarar el tipus de la variable abans de fer-la servir.</li><li>
+	Orientació a objectes: basats en prototipus</li><li>
+	Orientat a esdeveniments: fer clic, arrossegar un objecte, sortir d’una caixa de text,...</li>
+	</ul>
+	<img src='./uf1_nf2_apunts_tipat.png'>
+	</p>
+	<u>Llibreries per JS</u>
+	<p>
+	jQuery, MooTools, Prototype, Three.js, Processing.js , Underscore.js, moment.js, ...
+	https://threejs.org/ per treballar amb 3D
+	</p>
+	<u>Frameworks amb JS</u>
+	<p>
+	Creen i gestionen aplicacions de manera completa: Angular.js, React, Vue, Backbone.js, Ember,...
+	<img src='./uf1_nf2_apunts_frameworks.png'>
+	</p>
+  </p>
+  <h2 id='p2'>Declaració de dades: VAR, LET o CONST</h2>
+  <p>
+	<ul>
+		<li>Les constants: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const'>const</a>. Quan no es vol deixar modificar el valor d'una dada.</li>
+		<li>Les variables globals: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var'>var</a></li>
+		<li>Les variables: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let'>let</a>. Molt mé adequat que VAR, doncs no deixa crear de nou una variable amb el mateix nom.</li>
+	</ul>
+	<u>Recomanacions de Google respecte var,let i const:</u>
+	<p>No usar var mai més, només const per les constants i let per les variables locals o globals.</p>
+	<pre><code>
+		let num1;
+	</code></pre>
+	Declarar les constants amb majúscules i amb guions baixos per separar paraules:
+	<pre><code>
+		const NUMBER = 5;
+		const MAX = 100;
+	</code></pre>
+	<p>Cada línia és per declarar una única variable:</p>
+	<pre><code>
+		// malament
+		let a = 1, b = 2, c = 3;
+		// correcte
+		let a = 1;
+		let b = 2;
+		let c,d,e;
+	</code></pre>
+	<p><a href='https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/'>Diferències entre VAR, LET i CONST. Resum final interessant. En anglès.</a></p>
+	<a href='https://flaviocopes.com/javascript-reserved-words/'>Paraules reservades en JavaScript</a><br>
+	En JS totes les paraules reservades s'escriuen en lletres minúscules
+	  <p>
+		<a href='https://www.youtube.com/watch?v=1mgLWu69ijU&t=127s&list=PLWKjhJtqVAbljtmmeS0c-CEl2LdE-eR_F&index=1'>Vídeo</a> on s'explica la diferència entre const, let i var.
+	  </p>
+	  <p><kbd>Visitar el codi JS per veure uns exemples</kbd></p>
+    <u>Noms de les variables</u>
+	<p>JS és case-sensitive ( nomPersona != nompersona != nom_persona)
+	El nom d’una variable ha de complir les següents normes:
+	<ul>
+	<li>Només pot estar format per lletres, números i símbols $ i guió baix (_)</li>
+	<li>El primer caràcter no pot ser un número</li>
+	<li>No pot tenir espais ni cap signe de puntuació</li>
+	<li>No poden ser paraules clau/reservades pel propi llenguatge</li>
+	</ul>
+	</p>
+	<u>L'etiqueta &lt; noscript &gt;</u>
+	<p>Alguns navegadors no disposen de suport complet de JavaScript, altres navegadors permeten bloquejar-lo perquè creuen que la navegació serà més segura.<br>
+
+	L’etiqueta &lt; noscript &gt; s’utilitza per a detectar aquests tipus de navegador i així poder oferir un missatge a l’usuari indicant que ha d’activar JavaScript.
+	
+	<p><kbd>Visitar el codi HTML per veure exemple d'aplicació</kbd></p>
+	</p>
+	<p>RECORDATORI: Es pot escriure codi HTML o XHTML. En el Mòdul 6 s'escriure HTML. Això implica que les etiquetes que no tenen tancament s'han d'escriure així: 
+	<pre><code>
+		&lt;br&gt; 
+		&lt;img&gt; 
+		&lt;input&gt; 
+		&lt;hr&gt; 
+	</code></pre>
+	No s'accepten opcions així:
+	<pre><code>
+		&lt;br/&gt; 
+		&lt;/img&gt; 
+	</code></pre>
+	</p>
+  </p>
+	
+  <h2 id='p3'>Tipus de dades</h2>
+  <img src='./uf1_nf2_apunts_img1.png'>
+  <p>
+	En JS qualsevol valor numèric diferent de 0 és TRUE. I el 0 és FALSE.<br>
+	Per cadenes / strings, qualsevol que tingui contingut es considera TRUE, menys la cadena buida que és FALSE.<br>
+	I qualsevol variable declarada però no definida (assignada a un valor) és FALSE.
+	<p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+	<p>
+		<a href='https://flaviocopes.com/javascript-difference-null-undefined/' target='blank'>Els conceptes de null i undefined en JS </a>
+	</p>
+	<p>
+		<a href='https://flaviocopes.com/how-to-check-value-is-number-javascript/' target='blank'>Valida si una dada és de tipus Number </a>
+	</p>
+  </p>
+  <h2 id='p4'>Assignacions</h2>
+  <p>
+  <u>Declaració d’una variable:</u><br>
+	<pre><code>
+		let edat; 	
+	</code></pre>
+	variable declarada però no definida, per tant, el seu tipus és undefined i el seu valor també. Si és necessari s'ha de comparar amb la paraula undefined sense cometes.<br><br>
+	<u>Assignació d’un valor a una variable, definició d’una variable</u><br>
+		<pre><code>
+		edat = 23; 
+		</code></pre>
+	JS permet que el tipus d’una variable sigui dinàmic, és a dir, la variable edat pot canviar de tipus simplement assignant-la a un valor no numèric<br>
+		<pre><code>
+		edat = 'vint-i-tres'; 
+	</code></pre>
+	<u>Diferència entre cometes simples i dobles</u><br><br>
+	Per JS no hi ha diferència i es poden intercalar dins de les cadenes de text.<br>
+	Per escapar una cometa simple o doble es pot fer servir el símbol \ a davant.<br>
+ 	seqüències d’escapament: \n (nova línia),\t (tabulador),\' (cometa simple), \" (cometa doble), \\ (barra inclinada)<br>
+	És adequat acostumar-se a delimitar les cadenes de text amb la cometa simple, abans que amb la doble.
+	<p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+  </p>
+  <h2 id='p5'>Operadors</h2>
+  <img src='./uf1_nf2_apunts_img2.png'>
+  <p>OBSERVACIONS: En un guió que hi aparegui una divisió, sempre és responsabilitat del programador que no es pugui produir la situació excepcional de divisió entre zero.
+  <br>
+  L'operador + també serveix per concatenar text, a part de sumar números. 
+  <p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+  </p>
+  <h2 id='p6'>Sentències</h2>
+  <p>
+  <ul>
+	<li>document.write no s'ha de fer servir mai</li>
+	<li>return: s’indica dins d’una funció per poder retornar un valor o simplement per sortir de la funció</li>
+	<li>break: força la interrupció de l’execució d’un bucle</li>
+	<li>continue: interromp l’execució de la iteració actual i transfereix el control a la iteració següent</li>
+  </ul>
+  <u>Mètodes de l'objecte Window: alert, confirm, prompt</u><br><br>
+  <ul>
+	<li>window.alert o alert genera una petita finestra d'avís. </li>
+	<li>window.confirm o confirm genera una petita finestra amb 2 botons. Si es prem OK retorna true, en cas contrari false. </li>
+	<li>window.prompt o prompt genera una petita finestra amb 2 botons i una caixa de text, es pot indicar un segon paràmetre pel contingut per defecte de la caixa de text. El valor recollit de la caixa de text per defecte sempre serà String, cal fer ús dels mètodes parseInt o parseFloat. </li>
+  </ul>
+  <p><kbd>Veure l'Exemple 1</kbd></p>
+  </p>
+  <h2 id='p7'>Decisions</h2>
+  <p>Es tracta de les estructures condicionals treballades en altres llenguatges:
+	<ul>
+		<li>Estructura condicional doble: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else'>if - else</a> </li>
+		<li>Estructura condicional multiple: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch'>switch </a>. El valor que s'indica en cada case pot ser: un valor enter, un caràcter o bé una cadena.</li>
+		<li>Operador ternari: <a href='https://stackbyte.wordpress.com/2019/01/31/write-better-code-with-ternary-operator/'>exemples</a></li>
+	</ul>
+	Recordar que l'ús de les {} claus és opcional quan hi ha una única instrucció en un bloc.<br><br>
+	Pel què fa a les estructures condicionals múltiples també existeix l'opció de else-if:
+	<pre><code>
+		if (condició1) {
+			 una o diverses instruccions
+		} else if (condició2) {
+			una o diverses instruccions 
+		} else if (condició3) {
+			una o diverses instruccions 
+		} else if (condició4) {
+			una o diverses instruccions 
+		} else {
+			una o diverses instruccions 
+		}
+	</code></pre>
+  </p>
+  <h2 id='p8'>Bucles</h2>
+	<img src='./uf1_nf2_apunts_img3.png'>  
+  <p>En JS existeixen diferents tipus de for. Per recorrer un array es pot fer servir el <b>for-of</b>:
+  <pre><code>
+		let llista = [3,5,7,9];
+		<b>for</b> (elem <b>of</b> llista)
+			{
+				console.log(elem); 
+			}
+	</code></pre>
+  </p>
+  <h2 id='p9'>Comentaris al codi</h2>
+  <p>Els comentaris es poden indicar amb:
+  <pre><code>
+		// indicar tot seguit el comentari 1 línia
+
+		/*  per iniciar el comentari de més d'una línia
+		i per acabar el comentari */
+		
+		&lt;!-- COMENTARI EN HTML --> Dins del codi HTML
+	</code></pre>
+  </p>
+  <h2 id='p10'>Eines per programar, provar i depurar el codi</h2>
+  <p>
+
+    Visual Studio Code i altres afegits:<br>
+    <a href='https://medium.freecodecamp.org/tools-i-wish-i-had-known-about-when-i-started-coding-57849efd9248'>https://medium.freecodecamp.org/tools-i-wish-i-had-known-about-when-i-started-coding-57849efd9248</a>
+    <br><br><u>Eines en els navegadors</u><br>  
+    <a href='https://developer.mozilla.org/es/docs/Web/API/console'>Consola pels desenvolupadors</a>
+    <br>Exemples:<br>
+      console.dir(console) -> ens mostrar totes les propietats de console<br>
+      console.dir(Math) -> mostrar totes les propietats i mètodes de l'objecte Math<br>
+  </p>
+  <p>
+  <u>Bones pràctiques per programar amb JS</u>
+    <ol>
+        <li>Tabular el codi correctament</li><li>
+        Comentar el codi sempre</li><li>
+        Acabar cada instrucció amb el símbol ;</li>
+    </ol>
+    <br>
+    On consultar documentació:<br>
+    htpp://developer.mozilla.org -> reference -> JS
+  </p>  
+  </body>
+</html>

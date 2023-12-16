@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <title>Exercicis Popurri</title>
+     <style>
+        h1,h2,h3 {
+          background-color: azure;
+        }
+        td,th,table {
+          border: 1px solid black;
+          /*collapse: collapse;*/
+          border-collapse: collapse;
+        }
+        body {
+          font-family:Georgia, serif;
+        }
+     </style>
+     <script src="script.js"></script>
+  </head> 
+  <body>
+      <h4>No es pot editar la part de codi HTML que hi ha dins l'etiqueta body</h4>
+      <h1>Canvi unitats</h1>
+        <p>Demanar una quantitat en dólars i faci la conversió a euros. </p>
+        <p>Utilitzar en l'entrada la funció prompt(), i en la sortida la funció alert()</p>
+        <p><a href='http://www.finanzas.com/divisas/usd-eur/'>Aquí es pot trobar informació de quin és el factor conversió.</a></p>
+      <h1>LA TAULA DE MULTIPLICAR</h1>
+        <p>Dissenyar un script Javascript que comprovi si la taula de multiplicar indicada per l'usuari és correcte.</p>
+        <p>La idea és que l'usuari col·locarà 10 resultats d'una taula de multiplicar n (entre 1 i 10).
+        <p>I en premer el botó, el guió JS comprovarà si aquests resultats coincideixen amb alguna taula de multiplicar des d'1 fins al 10, si no es així, apareixerà la paraula INCORRECTE dins la última caixa de text. Si la taula és correcta apareixerà la paraula OK i al costat el número de taula que ha resolt l'usuari.</p>
+          <form name="taula de multiplicar">
+              <p>TAULA DE MULTIPLICAR </p>
+              <p>1 * n = <input type="text" id="n1" size="5"></p>
+              <p>2 * n = <input type="text" id="n2" size="5"></p>
+              <p>3 * n = <input type="text" id="n3" size="5"></p>
+              <p>4 * n = <input type="text" id="n4" size="5"></p>
+              <p>5 * n = <input type="text" id="n5" size="5"></p>
+              <p>6 * n = <input type="text" id="n6" size="5"></p>
+              <p>7 * n = <input type="text" id="n7" size="5"></p>
+              <p>8 * n = <input type="text" id="n8" size="5"></p>
+              <p>9 * n = <input type="text" id="n9" size="5"></p>
+              <p>10 * n = <input type="text" id="n10" size="5"></p>
+              <input  type="button" value="Endevinar n" id='boto1'>
+              <p><input  type="text" id ="missatge" size="15" ></p>
+          </form>
+        <h1>CANVIS D'ESCALA DE TEMPERATURES</h1>
+          <p>La web ha de demanar una temperatura expressada en ºC. Ha fer la conversió a ºK, ºF i ºR (Kelvin, Fahrenkeit i Rankine). </p>
+          <p><a href='https://es.wikipedia.org/wiki/Grado_Celsius'>Aquí es pot trobar informació de com fer la conversió.</a></p>
+          <p>El resultat mostrar-lo en un alert</p>
+          <form>
+              Introdueix un valor en graus Cº: <input type="text" id="valor">
+              <input type="button" value="Convertir" id='boto2'>
+          </form>
+          <p>JOCS DE PROVES A SUPERAR</p>
+          <table border='1'>
+              <tr><td>ºC</td><td>ºF</td><td>ºK</td><td>ºR</td><td>Reaumur</td></tr>
+              <tr><td>30</td><td>86</td><td>303.15</td><td>545.67</td><td>24</td></tr>
+              <tr><td>0</td><td>32</td><td>273.15</td><td>491.67</td><td>0</td></tr>
+              <tr><td> </td><td colspan="4">AVÍS: S'espera un valor numèric!!!!</td></tr>
+              <tr><td>a</td><td colspan="4">AVÍS: S'espera un valor numèric!!!!</td></tr>
+          </table>
+        <h1>CONCATENAR CADENES</h1>
+          <p>Quan l'usuari premi el botó, cal que es presentin els valors indicats per l'usuari amb els següents formats dins de la mateixa web, en les <i>etiquetes p amb id la lletra de l'apartat corresponen</i><p>
+            <ol type='a'>
+                <li> nom  cognom1 cognom2</li>
+                <li> cognom2, cognom1, nom</li>
+                <li> El meu nom és: nom</li>
+                <li> Els meus cognoms són: cognom1 cognom2</li>
+            </ol>
+          <form>
+            <fieldset>
+              <legend>ENTRADA DE DADES</legend>
+                Nom: <input type="text" id="nom" ><br>
+                Primer cognom: <input type="text" id="cognom1" ><br>
+                Segon cognom: <input type="text" id="cognom2" ><br>
+                <input type="button" value="Formatar" id='boto3'>
+             </fieldset>
+          </form>
+          <p id='a'></p>
+          <p id='b'></p>
+          <p id='c'></p>
+          <p id='d'></p>
+        <h1>LOGIN</h1>
+          <p>Escriure un guió en JS que validi un nom d’usuari i contrasenya. Al prémer el botó mostrar dins la pàgina web <i>en l'etiqueta p amb id validacio</i> un missatge informant de si les dades són o no vàlides. I netejar les caixes de text. </p>
+          <p>Cal crear un parell de variables amb els valors que seran els únics que serviran per validar-se.</p>
+          <form>
+              <fieldset>
+                <legend>ENTRADA AL SISTEMA</legend>
+                <table>
+              <tr><td>Username:</td> <td><input type='text' id='user' name='nom'></td></tr>
+              <tr><td>Password: </td><td><input type='password' id='pass' name='nom'></td></tr>
+              <tr><td></td><td align='right'><input type='button' value=' Login ' id='boto4'></td></tr>
+              </table>
+              </fieldset>
+          </form>
+          <p id='validacio'></p>
+
+      <h1>REPETICIÓ</h1>
+          <p>Preguntar una frase i seguidament el nombre de vegades que es vol visualitzar (>0).</p>
+          <p>Presentar la frase el nombre de vegades indicat.</p>
+          <p>Si l'usuari introdueix un número menor de zero cal tornar a preguntar el paràmetre.</p>
+          <p>El format d'entrada i sortida de dades és lliure.</p>
+          <input type='button' value='EXECUTAR' id='Repe'>
+
+      <h1>Fibonacci</h1>
+          <p>Visualitzar els termes de la sèrie de FIBONACCI dins de l'etiqueta <i>p amb id termesFibonacci</i>. Més informació <a href='https://ca.wikipedia.org/wiki/Successió_de_Fibonacci'>aquí</a></p>
+          <p>En la successió de Fibonacci cada terme és la suma dels seus dos termes anteriors. El terme 0 i el terme 1 valen respectivament 0 i 1.</p><p>La seqüència de valors és 0 1 1 2 3 5 8 13 21 .... 
+          </p>
+          <form>
+              <fieldset>
+                  <legend>LA SÈRIE DE FIBONACCI</legend>
+                  Quantitat de valors que es volen llistar: <input type='text' id='qTermes'><br>
+                  <input type='button' value='CALCULAR' id='fibonacci'>
+              </fieldset>
+          </form>
+          <p id='termesFibonacci'></p>
+      <h1>Factorial</h1>
+          <p>Calcular el factorial d'un número enter positiu. n! = n * (n-1) * (n-2) * (n-3) * ... * 1</p> 
+          <p>
+          Més informació <a href='https://ca.wikipedia.org/wiki/Factorial'>aquí</a>
+          </p>
+          <p>El format d'entrada i sortida de dades és lliure.</p>
+          <input type='button' value='EXECUTAR' id='factorial'>
+
+      <h1>Increment</h1>
+        <p>Preguntar dos números on el segon ha de ser igual o més gran que el primer (repetir el procés mentre no es compleixi la condició)</p>
+        <p>Mostrar tots el números que van del primer al segon amb increments d'un en un</p>
+        <p>El format d'entrada i sortida de dades és lliure.</p>
+        <input type='button' value='EXECUTAR' id='increment'>
+
+      <h1>Divisió</h1>
+          <p>Resoldre una equació de primer grau del tipus: Ax+B=C.</p><p>Cal demanar els valors d'A, B i C i seguidament calcular el valor de la variable x. </p>
+          <p>NOTA: 0/0 és indeterminat i n/0 és infinit.</p>
+          <p>El format d'entrada i sortida de dades és lliure.</p>
+          <input type='button' value='EXECUTAR' id='divisió'>
+      <h1>Validació NIF</h1>
+          <p>El càlcul de la lletra del DNI és un procés matemàtic senzill que es basa en obtenir el residu de la divisió sencera del número de DNI i el número 23.<br>
+          A partir del resultat de la divisió s'obté la lletra seleccionada dins d'un array de lletres:<br>
+           lletres = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];<br>
+          Per tant, si el residu de la divisió és 0, la lletra del DNI és la T i, si el residu és 3 la lletra és A.</p>
+          <p>Es demana: </p>
+          <ol>
+              <li>Si el número no està entre 1 i 99999999 mostrar un missatge a l'usuari indicant que no és vàlid, així com si no s'indica una lletra o bé no és dins de les possibles (p.e: Ç,Ñ,I,O,U)</li>
+              <li>Calcular la lletra corresponent segons el mètode explicat</li>
+              <li>Comparar la lletra obtinguda amb la indicada per l'usuari. Si no coincideixen, es mostra un missatge a l'usuari indicant que la lletra que ha introduït no és correcta. En l'altre cas es mostra un missatge indicat que el DNI i la lletra introduïts són correctes.</li>
+          </ol>
+          <form>
+              <fieldset>
+                  <legend>VALIDACIÓ DEL NIF</legend>
+                  NIF: <input type='text' size='8' id='dni'>-<input type='text' size='1' id='lletra'><br>
+                  <input type='button' value='VALIDAR NIF' id='boto5'>
+              </fieldset>
+          </form>
+
+      <h1>Resta real</h1>
+          <p>S'espera que l'usuari indiqui dos valors numèrics (poden ser amb decimals i negatius). Quan l'usuari premi el botó caldrà mostra la resta real entre tots dos dins <i>l'etiqueta div amb id resultat</i>. Sempre caldrà mostrar-la amb 2 decimals</p>
+          <p>JOC DE PROVES A SUPERAR</p>
+         <table>
+              <thead><th>ENTRADA 1</th><th>ENTRADA 2</th><th>SORTIDA</th></thead>
+              <tr>
+                  <td>13.33</td><td>22.18</td><td>-8.85</td>
+              </tr>
+              <tr>
+                  <td>a</td><td>22.18</td><td>ENTRADA NO VÀLIDA</td>
+              </tr>
+              <tr>
+                  <td>13.33</td><td></td><td>ENTRADA NO VÀLIDA</td>
+              </tr>
+          </table>
+          <br>
+          <form>
+              <fieldset>
+                <legend>FORMULARI D'ENTRADA DE DADES - RESTA REAL</legend>
+                  <input type="text" id="num1" value="13.33">
+                  <input type="text" id="num2" value="22.18">
+                  <input type="button" id='accio' value='RESTAR'>
+               </fieldset>
+          </form>
+          <div id="resultat"></div>
+
+      <h3>Conversor Longituds</h3>
+          <p>Escriure un guió en JS que permeti fer conversions de valors numèrics a diferents unitats de mesura de distàncies. Les unitats entre les que es pot escollir són: metres, kilòmetres o bé mil•límetres.</p><p>Cal controlar les situacions anòmales que es puguin produir. El resultat cal mostrar-lo dins la mateixa pàgina.
+          </p>
+          <form>
+              <fieldset>
+                <legend>CONVERSIÓ D'UNITATS DE LONGITUDS</legend>
+                <table>
+              <tr><td>From:<input id='quantitat' size='10' type='text'></td> <td>
+                <select id='Uorigen'>
+                    <option></option>
+                    <option value='k'>Kilòmetres</option>
+                    <option value='me'>Metres</option>
+                    <option value='mi'>Mil·limetres</option>
+                </select>
+              </td></tr>
+              <tr><td>To:              
+                <select id='Udesti'>
+                    <option></option>
+                    <option>Kilòmetres</option>
+                    <option>Metres</option>
+                    <option>Mil·limetres</option>
+                </select>
+              </td><td></td></tr>
+              <tr><td></td><td align='right'><input type='button' value=' CONVERTIR ' id='boto6'></td></tr>
+              </table>
+              </fieldset>
+          </form>
+          <p id='valor1'></p>
+  </body>
+</html>

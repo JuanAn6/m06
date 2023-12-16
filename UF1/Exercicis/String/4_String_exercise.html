@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>String exersices</title>
+    <script src="script.js"></script>
+  </head> 
+  <body>
+  <h1>No es pot editar la part de codi HTML que hi ha dins l'etiqueta body</h1>
+  <h1>Cal fer tots els exercicis en un arxiu JS a part</h1>
+  <h2>Exercici 1</h2>
+  <p>Demostrar amb exemples en la consola del navegador, la utilitat de les següents instruccions i afirmacions:</p>
+  <p>objectiu: passar d'array a String i d'String a Array</p>
+  <blockquote><pre>
+     var unString = unArray.toString(); // què fa? 
+     var unString = unArray.join('') // què fa?          
+     var unArray = unString.split(''); // què fa?
+  </pre></blockquote>
+  <p>objectiu: què és pot fer amb un Array i què amb un String</p>
+  Accés per posició
+  <blockquote><pre>
+    unArray[i]
+    unString.charAt(i) 
+    unString[i]
+  </pre></blockquote>
+  Modificar una posició
+  <blockquote><pre>
+    unArray[i] = el_que_sigui
+    unString.charAt(i) = no es pot!!!!!?
+    unString[i] = no es pot!!! però dóna cap error?
+  </pre></blockquote>
+
+  <h2>Exercici 2</h2>
+
+  <p>Crear una funció que al prémer algun dels dos botons realitzi l’acció corresponent en el mateix text, reescrivint el contingut del camp d'entrada (textarea)</p>
+  <form>
+      <fieldset>
+          <legend>CONVERSIÓ AUTOMÀTICA DE Majúscules A Minúscules O A L'INREVES</legend>
+          <textarea cols='40' rows='5' id='original'></textarea><br>
+          <input type='button' value='MAJÚSCULES' id='majus'> <input type='button' value='minúscules' id='minus'>
+      </fieldset>
+  </form>
+
+  <h2>Exercici 3</h2>
+
+  <p>Donada una cadena per part de l’usuari de com a mínim 15 caràcters, cal:
+    <ol>
+      <li>obligar que la cadena sigui d'aquesta longitud o més, en cas contrari se l'informa amb un avís en l'etiqueta <i>div amb id avisos</i></li>
+      <li>substituir el caràcter ‘a’ per la lletra ‘i’, totes les vegades que aparegui. Mostrar la nova cadena resultant en l'etiqueta <i>div amb id cadenaAmbIs</i></li>
+      <li>mostrar la quantitat de vegades que s’ha trobat la ‘a’ en l'etiqueta <i>div amb id quantitatAs</i></li>
+    </ol>
+  </p>
+  <form>
+      <fieldset>
+          <legend>TRANSFORMAR LA CADENA</legend>
+          <input type='text' size='25' id='cadena'><br>
+          <input type='button' value='TRACTAR FRASE' id='tractarFrase'>
+      </fieldset>
+  </form>
+  <div id='avisos'></div>
+  <div id='cadenaAmbIs'></div>
+  <div id='quantitatAs'></div>
+
+  <h2>Exercici 4</h2>
+
+  <form>
+      <fieldset>
+          <legend>LES VOCALS</legend>
+          <input type='text' id='frase'><br>
+          <input type='button' value='COMPTAR VOCALS' id='vocalitzar'>
+      </fieldset>
+  </form>
+      <div>La frase indicada té <span id='qc'>VALOR DESCONEGUT</span> caràcters.</div>
+      <div>La frase indicada té <span id='qAs'>VALOR DESCONEGUT</span> vocals A.</div>
+      <div>La frase indicada té <span id='qEs'>VALOR DESCONEGUT</span> vocals E.</div>
+      <div>La frase indicada té <span id='qIs'>VALOR DESCONEGUT</span> vocals I.</div>
+      <div>La frase indicada té <span id='qOs'>VALOR DESCONEGUT</span> vocals O.</div>
+      <div>La frase indicada té <span id='qUs'>VALOR DESCONEGUT</span> vocals U.</div>
+      <div>La frase indicada en ordre invers és <span id='Finvertida'>VALOR DESCONEGUT</span></div>
+  
+  <h2>Exercici 5</h2>
+
+  <p>Dissenyar una funció en JS que sigui capaç de substituir un determinat caràcter per un altre caràcter (tantes vegades com aparegui en la frase original) i la nova frase la visualitzi dins de l'etiqueta <i>div amb id novaFrase</i>. El caràcter a substituir i el nou caràcter s’han de demanar a l’usuari. Cal controlar, entre d’altres, el cas que el caràcter a substituir no existeixi, i en aquest cas informar amb una alerta.</p>
+  <form>
+      <fieldset>
+          <legend>SUBSTITUIR UN CARÀCTER</legend>
+          <table>
+          <tr><td>Frase: </td><td><input type='text' id='sentence'></td></tr>
+          <tr><td>Caràcter a substituir: </td><td><input type='text' id='oldChar'></td></tr>
+          <tr><td>Nou caràcter: </td><td><input type='text' id='newChar'><br></td></tr>
+          <tr><td></td><td><input type='button' value='SUBSTITUIR' id='substitucio'></td></tr>
+          </table>
+      </fieldset>
+      <div id='novaFrase'></div>
+  </form>
+  </body>
+</html>

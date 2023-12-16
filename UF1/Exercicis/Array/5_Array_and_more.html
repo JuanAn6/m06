@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="" lang="es">
+    <title>
+    EXERCICIS. STRING & ARRAY
+    </title>   
+    <script src="script.js"></script>
+    </head>
+<body>
+  <h1>No es pot editar la part de codi HTML que hi ha dins l'etiqueta body</h1>
+  <h1>Cal fer tots els exercicis en un arxiu JS a part</h1>
+  <h3>Exercici 1. Calcular la Moda</h3>
+  <p>Escriure un programa en JS per trobar el valor que es repeteix més dins d’un array, és a dir, la moda.</p>
+  <p>Exemple:</p>
+  <p><code>arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];</code></p>
+  <p><code>Sortida : a ( 5 vegades )</code></p>
+  <p>Cal superar els 4 jocs de prova que s'indiquen dins l'arxiu.</p>
+  <p>La sortida ha de ser per CONSOLA, indicant el valor de la Moda i les vegades que es repeteix.</p>
+  <p> En cas d'empat indicar de la manera que es consideri adequada, també per consola.</p>
+  <h3>Exercici 2. Part final comuna de 2 paraules</h3>
+  <p>REQUISIT: En les dues caixes de text l’usuari ha de indicar dues paraules (sense espais).</p>
+  <p>Quan es premi el botó es mostrarà <i>en l'etiqueta p amb id paragraf1</i> la part que sigui comuna de les dues paraules començant pel final.</p>
+  <p>JOCS DE PROVA A SUPERAR</p>
+ <table border='1'>
+      <thead><th>ENTRADA 1</th><th>ENTRADA 2</th><th>SORTIDA</th></thead>
+      <tr>
+          <td>client</td><td>RIENT</td><td>IENT</td>
+      </tr>
+      <tr>
+          <td>informàtica</td><td>matemàtiques</td><td>NO ACABEN IGUAL</td>
+      </tr>
+      <tr>
+          <td>FARISTOL</td><td>MUSSOL</td><td>OL</td>
+      </tr>
+      <tr>
+          <td>Bon dia</td><td>amanida</td><td>ENTRADA NO VÀLIDA</td>
+      </tr>
+      <tfoot><td  colspan=3>Observar que no ha de ser sensitive-case!</td></tfoot>
+  </table>
+  <hr>
+  <form>
+      <fieldset>
+        <legend>FORMULARI D'ENTRADA DE DADES</legend>
+          Paraula 1:<input type="text" id="caixa1" size="25"><br>
+          Paraula 2:<input type="text" id="caixa2" size="25"><br>
+          <input type="button" id='boto2' value="Comparar paraules"><br>
+      </fieldset>
+  </form>
+   <p id="paragraf1"></p>
+   <h3>Exercici 3. Cercar Paraula</h3>
+  <p>A partir d'una frase i una paraula cal dissenyar una funció en JS capaç de buscar dins de la frase la paraula. Cal presentar dins la pàgina web el número de vegades que apareix la paraula en la frase en l'etiqueta <i>p amb id qP</i>.
+  </p>
+  <form>
+        <fieldset>
+        <legend>CERCANT PARAULES</legend>
+              Frase: <textarea name='frase' cols='50' rows='6'placeholder='Una gallina xica, tica, mica, camacurta i ballarica, va tenir sis fills xics, tics, mics, camacurts i ballarics. Si la gallina no hagués estat xica, tica, mica, camacurta i ballarica, els seus fills no haurien estat xics, tics, mics, camacurts i ballarics.'></textarea><br>
+              Paraula a cercar: <input type='text' name='paraula' size='30' placeholder='xics'><br>
+              <input type='button' id='boto3' value=' CERCAR '>
+        </fieldset>
+      </form>
+        <p id='qP'></p>
+
+  <h3>Exercici 4</h3>
+  <p>A partir d'una quantitat d'euros, cal actualitzar els valors de la taula amb la quantitat del bitllets i monedes que equivalen. </p>
+  <p>NOTA: els bitllets són: 500, 200, 100, 50, 20, 10, 5; i les monedes: 2, 1 </p>
+  <table>
+    <tr><td>Import:</td><td><input type='text' id='import' placeholder='327'></td></tr>
+    <tr><td> </td><td><input type='button' id='boto4' value='ACTUALITZAR'></td></tr>
+    <tr><td>Quantitat de bitllets de 500: </td><td>0</td></tr>
+    <tr><td>Quantitat de bitllets de 200: </td><td>1</td></tr>
+    <tr><td>Quantitat de bitllets de 100: </td><td>1</td></tr>
+    <tr><td>Quantitat de bitllets de 50: </td><td>0</td></tr>
+    <tr><td>Quantitat de bitllets de 20: </td><td>1</td></tr>
+    <tr><td>Quantitat de bitllets de 10: </td><td>0</td></tr>
+    <tr><td>Quantitat de bitllets de 5: </td><td>1</td></tr>    
+    <tr><td>Quantitat de monedes de 2 €: </td><td>1</td></tr>    
+    <tr><td>Quantitat de monedes de 1 €: </td><td>0</td></tr>        
+  </table>
+  <h3>Exercici 5. Calcular el cost d’un telegrama.</h3>
+      <p>Suposarem que un telegrama pot estar format de màxim 4 línies.</p>
+      <p>Cada línia pot estar formada per un màxim de 10 paraules.</p>
+      <p>Una vegada l’usuari premi el botó caldrà fer les següents comprovacions:</p>
+      <ul>
+          <li>l’usuari ha entrat com a mínim una línia</li>
+          <li>cada línia no té més de 10 paraules</li>
+      </ul>
+      <p>En cas de no cumplir alguna especificacions caldrà mostrar una alerta.</p>
+      <p>Si tot es correcte es mostrarà el telegrama amb la paraula STOP com a separador de cada línia donada per l’usuari i el cost en €, que es calcularà segons el següent criteri:</p>
+      <ul>
+          <li>Cada paraula val 0.5 cèntims</li>
+          <li>Cada línia amb 10 paraules exactes val 4 € i no és té en compte el cost per paraula</li>
+          <li>Si hi ha més de 3 línies hi ha un descompte del 10% sobre el total</li>      
+      </ul>
+      <p>Mostrar els resultats dins l'etiqueta <i>p amb id cost</i></p>
+      <form>
+        <fieldset>
+        <legend>TELEGRAMA</legend>
+              Indicar el missatge a enviar, tenint en compte les següents normes:
+              <br>
+              <ul>
+                  <li>Màxim 10 paraules en cada caixa</li>
+              </ul>
+              <input type='text' id='linia1' name='linia' size='50'><br>
+              <input type='text' id='linia2' name='linia' size='50'><br>
+              <input type='text' id='linia3' name='linia' size='50'><br>
+              <input type='text' id='linia4' name='linia' size='50'><br>
+              <input type='button' id='boto5' value=' CALCULAR EL COST DEL TELEGRAMA '>
+        </fieldset>
+      </form>
+        <p id='cost'></p>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    EXERCICI JS POO
+    </title>   
+    <link rel="stylesheet" type="text/css" href="estils.css">
+	<script src="pestanyes.js"></script>
+	<script src="Persona.js"></script>
+	<script src="Cotxe.js"></script>
+</head>
+<body>
+    <ul class="tab">
+        <li><a id='a1' href="#" class="link active">PERSONA</a></li>
+        <li><a id='a2' href="#" class="link" >COTXE</a></li>
+        <li><a id='a3' href="#" class="link" >LLIBRE</a></li>
+    </ul>
+    <div id="pag1" class="content">
+        <p>
+            <h1>Classe Persona</h1>
+                <p>Crear una nova classe Persona amb les propietats:</p>
+                <ul>
+                    <li>nom</li>
+                    <li>cognom1</li>
+                    <li>cognom2</li>
+                    <li>edat</li>
+                    <li>sexe</li>
+                    <li>estat civil</li>
+                </ul>
+                <p>
+                La classe Persona ha de tenir els mètodes:
+                </p>
+                <ul>
+                    <li>validarEstat(): Permetrà comprovar que l’estat està entre un dels següents valors: Solter, Casat, Separat, Divorciat o Vidu. I si és així, assignarà el valor a l'objecte en majúscules.</li>
+                    <li>toString(): retornar una representació textual d'una Persona</li>
+                </ul>
+                <p>Al premer el botó cal mostrar la invocació del mètode toString de la persona creada a l'etiqueta amb <i>id='dadesPer'</i>.</p>
+                <p>Fer un mínim de validació de les dades entrades del formulari per poder crear una Persona.<br>
+		   Les dades obligatòries són: nom, cognom1, edat, sexe i estat civil.<br>
+                   Si no s'indica cognom2 es posa a null.<br>
+	           L'edat ha de ser positiva.<br>
+		   En el constructor invocar el mètode validarEstat.</p>
+		<form id='formPer'>
+                        <fieldset>
+                            <legend>Nova Persona</legend>
+			    <table>
+                              <tr><td>Nom:        </td><td><input type='text' id='nomP' size='25'></td></tr>
+                              <tr><td>Cognom 1: </td><td><input type='text' id='cognom1P' size='25'></td></tr> 
+                              <tr><td>Cognom 2: </td><td><input type='text' id='cognom2P' size='25'></td></tr> 
+                              <tr><td>Edat:     </td><td><input type='text' id='edatP' size='5'></td></tr>
+                              <tr><td>Sexe:     </td><td>Dona<input type='radio' id='dona' name='sexeP' value='D'> 
+                                                         Home<input type='radio' id='home' name='sexeP' value='H'></td></tr> 
+                              <tr><td>Estat Civil: </td><td><select id='estatCivilP'>
+								<option></option>
+								<option value='solter'>Solter/a</option>
+								<option value='casat'>Casat/da</option>
+								<option value='separat'>Separat/da</option>
+								<option value='divorciat'>Divorciat/da</option>
+								<option value='vidu'>Vidu/a</option>
+							    </select>			</td></tr> 
+                              <tr><td colspan='2'><input type='button' id='botoPer' value='crear persona'></td></tr> 
+                            </table>
+                        </fieldset>
+			<p id='dadesPer'></p>
+                    </form>
+
+        </p>
+    </div>
+    <div id="pag2" class="content">
+        <p>
+                <h1>Classe Cotxe</h1>
+                 <p>Crear una nova classe Cotxe amb les propietats:</p>
+                    <ul>
+			<li>matricula</li>
+                        <li>color</li>
+                        <li>marca</li>
+                        <li>model</li>
+                        <li>data matriculació</li>
+                    </ul>
+                    <p>Aquesta classe ha de tenir un mètode anomenat <i>veureParcial</i> que retorni una cadena amb el color,la marca i el model de l'objecte que l'invoca.</p>
+                    <p>Programar el mètode <i>toString</i> que aprofiti el mètode <i>veureParcial</i></p>
+                    <p>En prémer el botó per crear un objecte Cotxe i visualitzar-lo dins l'etiqueta dadesCotxe.</p>
+                    <p>El camp per indicar la data de matriculació és un "input='date'" el qual retornarà un String que es pot passar com a paràmetre en el constructor d'un objecte "Date" per crear la data, si la data no és correcte generarà "Invalid Date".</p>
+		<form id='formCot'>
+                        <fieldset>
+                            <legend>Nou Cotxe</legend>
+			    <table>
+                              <tr><td>Matricula:        </td><td><input type='text' id='matC' size='10'></td></tr>
+                              <tr><td>Color: </td><td><input type='text' id='colorC' size='25'></td></tr> 
+                              <tr><td>Marca: </td><td><input type='text' id='marcaC' size='25'></td></tr> 
+                              <tr><td>Model:     </td><td><input type='text' id='modelC' size='25'></td></tr> 
+                              <tr><td>Data Matriculació:     </td><td><input required type='date' id='dataC'></td></tr> 
+                              <tr><td colspan='2'><input type='button' id='botoCot' value='crear cotxe'></td></tr> 
+                            </table>
+                        </fieldset>
+
+		    <div id='dadesCotxe'></div>
+        </p>
+    </div>
+    <div id="pag3" class="content">
+        <p>
+                <h1>Classe LLIBRE</h1>
+                <p>Crear una nova classe Llibre amb les propietats:</p>
+                <ul>
+                    <li>títol. Sempre s'ha de desar en majúscules</li>
+                    <li>autor. Si es passa null, undefined o cadena buida es posarà el valor "Desconegut"</li>
+                    <li>pàgines totals</li>
+                    <li>pagines llegides (inicialitzada a 0, només es modifica via un mètode indicat posteriorment)</li>
+                </ul>
+                <p>
+                La classe Llibre ha de tenir els mètodes:
+                </p>
+                <ul>
+                    <li>llegir(): Si no s’indica paràmetre cal fer que l’objecte ja s’ha llegit tot,
+                                 en cas contrari cal validar que el paràmetre és numèric, positiu i menor o igual que les pàgines totals del llibre.
+                                Si el valor no és vàlid, el mètode no farà res.
+                                 En cas que ja s'hagin llegit pàgines i el valor indicat + les pàgines llegides superi el total, s'assignarà directament el total com a pàgines llegides.</li>
+                    <li>toString()</li>
+                </ul>
+                <p>
+                Es pot suposar (per simplificar) que un llibre s'identifica pel títol.
+                </p>
+                <p>
+                Cada cop que es crei un nou llibre cal afegir el toString dins el "select".
+                </p>
+                <p>
+                Cada cop que un llibre ja s'hagi llegit del tot ha de desaparèixer del select
+                i es visualitzarà després dels formularis en la zona amb id <i>sol3</i>
+                </p>
+                <p>
+                Per fer el què es demana, es recomana crear un array d'objectes llibre, i quan ja estiguin llegits, esborrar-los de l'array.
+                </p>
+                <p>
+                    <form id='formLl'>
+                        <fieldset>
+                            <legend>Nou Llibre</legend>
+                            Títol: <input type='text' id='titolLL' size='25'><br>
+                            Autor: <input type='text' id='autorLL' size='25'><br> 
+                            Pàgines: <input type='text' id='pagsLL' size='4'><br> 
+                            <input type='button' id='botoLl' value='crear llibre'> 
+                        </fieldset>
+                    </form>
+                    <form id='formLlegir'>
+                        <fieldset>
+                            <legend>Llegir Llibres existents</legend>
+                            Escollir el llibre que es vol llegir: <select id='llibresAllegir'>
+                                                                       <option></option>
+                                                                  </select><br>
+                            Indicar quantitat de pàgines llegides: <input type='text' id='paginesLlegides' size='4'> (no indicar res si s'ha llegit tot)
+                            <br><input type='button' value='llegir llibre' id='botoLl2'>
+                        </fieldset>
+                    </form>
+                </p>
+                <p id='sol3'></p>
+        </p>
+    </div>
+</body>
+</html>

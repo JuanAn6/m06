@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    DADES METEOROLÒGIQUES
+    </title>   
+    <script src="estaciones_meteo.js"></script>
+    <script src="main.js"></script>
+</head>
+<body bgcolor="#E6E6FA">
+    <h1>DADES METEOROLÒGIQUES</h1>
+    <p>A partir de l'arxiu <i><b>estaciones_meteo.js</b></i>, el qual té un objecte json. Crear una variable amb el contingut de la variable json.</p>
+    <p>L'objectiu de l'exercici és crear un nou objecte json amb les dades de la variable json original, però estructurada diferent.
+        Doncs, l'estructura actual no és fàcil de tractar.</p>
+
+    <p>Es pot veure, via algun validador JSON, que hi ha un únic camp arrel anomenat "data" el qual conté un array d'objectes JSON molt simples (amb un únic camp i valor per cada objecte/posició de l'array).
+        Dins l'array es van repetin periodicament els valors dels camps dels objectes JSON així:</p>
+    <code><pre>
+        "CODIGO_ESTACION",
+        "NOMBRE_ESTACION",
+        "FECHA",
+        "TEMPERATURA_UNIDAD",
+        "TEMPERATURA_MAX",
+        "TEMPERATURA_MED",
+        "TEMPERATURA_MIN",
+        "RADIACION_SOLAR_UNIDAD",
+        "RADIACION_SOLAR_MAX",
+        "RADIACION_SOLAR_MED",
+        "PRECIPITACION_UNIDAD",
+        "PRECIPITACION_ACUM",
+        "HUMEDAD_RELATIVA_UNIDAD",
+        "HUMEDAD_RELATIVA_MED",
+        "PRESION_ATMOSFERICA_UNIDAD",
+        "PRESION_ATMOSFERICA_MED",
+        "VELOCIDAD_VIENTO_UNIDAD",
+        "VELOCIDAD_VIENTO_MAX",
+        "VELOCIDAD_VIENTO_MED",
+        "VELOCIDAD_VIENTO_UNIDAD_KMMH",
+        "VELOCIDAD_VIENTO_KMH_MAX",
+        "VELOCIDAD_VIENTO_KMH_MED"
+    </pre></code>
+    <h2>FASE 1</h2>
+    <p>Per tant, la primera fase de l'exercici és crear el nou objecte JSON amb un camp data de tipus array i cada posició de l'array sigui un objecte JSON
+        amb tots els camps indicats en la llista anterior i el valor per cada objecte procedirà dels valors de dins l'objecte JSON inicialment proporcionat.</p>
+    <p>Per comprovar que el procés s'ha fet correctament es pot validar, sabent que, l'objecte original té un array de 75240 posicions i el nou objecte JSON té un array dins el camp 'data' amb 3419 posicions.</p>
+    <p>Una vegada generat el nou array cal programar els 2 botons i que al carregar la pàgina s'omplin els següents span's amb els valors de la posició 0.</p>
+
+	<table border='1'><tr><td>
+    <code><pre>
+    <p><input type='button' value='<' id='anterior'> Dades <input type='button' value='>' id='seguent'></p>
+    Posició: <span id="pos"></span>
+    "CODIGO_ESTACION":<span id="CODIGO_ESTACION"></span>
+    "NOMBRE_ESTACION":<span id="NOMBRE_ESTACION"></span>
+    "FECHA":<span id="FECHA"></span>
+    "TEMPERATURA_UNIDAD":<span id="TEMPERATURA_UNIDAD"></span>
+    "TEMPERATURA_MAX":<span id="TEMPERATURA_MAX"></span>
+    "TEMPERATURA_MED":<span id="TEMPERATURA_MED"></span>
+    "TEMPERATURA_MIN":<span id="TEMPERATURA_MIN"></span>
+    "RADIACION_SOLAR_UNIDAD":<span id="RADIACION_SOLAR_UNIDAD"></span>
+    "RADIACION_SOLAR_MAX":<span id="RADIACION_SOLAR_MAX"></span>
+    "RADIACION_SOLAR_MED":<span id="RADIACION_SOLAR_MED"></span>
+    "PRECIPITACION_UNIDAD":<span id="PRECIPITACION_UNIDAD"></span>
+    "PRECIPITACION_ACUM":<span id="PRECIPITACION_ACUM"></span>
+    "HUMEDAD_RELATIVA_UNIDAD":<span id="HUMEDAD_RELATIVA_UNIDAD"></span>
+    "HUMEDAD_RELATIVA_MED":<span id="HUMEDAD_RELATIVA_MED"></span>
+    "PRESION_ATMOSFERICA_UNIDAD":<span id="PRESION_ATMOSFERICA_UNIDAD"></span>
+    "PRESION_ATMOSFERICA_MED":<span id="PRESION_ATMOSFERICA_MED"></span>
+    "VELOCIDAD_VIENTO_UNIDAD":<span id="VELOCIDAD_VIENTO_UNIDAD"></span>
+    "VELOCIDAD_VIENTO_MAX":<span id="VELOCIDAD_VIENTO_MAX"></span>
+    "VELOCIDAD_VIENTO_MED":<span id="VELOCIDAD_VIENTO_MED"></span>
+    "VELOCIDAD_VIENTO_UNIDAD_KMMH":<span id="VELOCIDAD_VIENTO_UNIDAD_KMMH"></span>
+    "VELOCIDAD_VIENTO_KMH_MAX":<span id="VELOCIDAD_VIENTO_KMH_MAX"></span>
+    "VELOCIDAD_VIENTO_KMH_MED":<span id="VELOCIDAD_VIENTO_KMH_MED"></span>
+    </pre></code>
+	</td><td>
+		IMATGE PER SIMULAR EL COMPORTAMENT EN CAS DE PRÉMER EL BOTÓ ">"<br>
+	    <img src='./fase1.png'>
+	</td></tr>
+	</table>
+    <h2>FASE 2</h2>
+    <p>La següent fase de l'exercici és generar un nou objecte JSON a partir de l'anterior. El nou objecte tindrà un camp data de tipus array i dins objectes JSON, un per cada estació, amb l'estil següent: </p>
+    
+    <code><pre>
+        let nouJson = { data: [
+                                {
+                                "CODIGO_ESTACION": valor,
+                                "NOMBRE_ESTACION": valor,
+                                observacions: [
+                                                {
+                                                "FECHA": valor,
+                                                "TEMPERATURA_MAX": valor,
+                                                "TEMPERATURA_MED": valor,
+                                                "TEMPERATURA_MIN": valor,
+                                                "RADIACION_SOLAR_MAX":valor,
+                                                "RADIACION_SOLAR_MED":valor,
+                                                "PRECIPITACION_ACUM":valor,
+                                                "VELOCIDAD_VIENTO_KMH_MAX":valor,
+                                                }, {
+                                                },
+                                                ...
+                                              ]
+                                },{
+                                },
+                                ...
+                              ]
+                      }
+    </pre></code>
+    <p>Per cada estació en el camp observacions hi haurà un array amb totes aquelles 
+    dades dels diferents dies en els quals el camp "TEMPERATURA_MAX" no sigui null. 
+    És a dir, per cada registre de l'array generat en la FASE 1, només es tindran en compte
+    els registres que el camp "TEMPERATURA_MAX" no sigui null. De tots els camps
+    només es desaran els indicats aquí dalt.</p>
+    <p>Compte! Les dades d'una mateixa estació no estan ordenades. Per tant en poden apareixer duran el tractament de tota la variable JSON.</p>
+    <p>En total hi ha 19 estacions meteorològiques diferents:</p>
+    <p id='qestacions'>
+        
+    </p>
+	IMATGE PER SIMULAR EL COMPORTAMENT DESPRÉS DE GENERAT LA NOVA VARIABLE JSON<br>
+	<img src='./fase2.png'>
+    <h2>FASE 3</h2>
+    <p>
+    Per l'estació amb codi 1 de Ezcaray,  mostrar una taula amb les 173 observacions que consten. Repetir la capçalera cada 20 files.
+    </p>
+    <p>
+    Es vol que aquesta taula es pugui visualitzar ordenada segons algun dels seus camps. Per defecte es vol ordenada per "FECHA", però hi ha d'haver alguna manera que permeti, en qualsevol moment, que l'usuari la pugui ordenar pel camp que desitgi: "FECHA",
+    "TEMPERATURA_MAX","TEMPERATURA_MED","TEMPERATURA_MIN","RADIACION_SOLAR_MAX","RADIACION_SOLAR_MED" o "VELOCIDAD_VIENTO_KMH_MAX"
+    </p>
+
+    <p id='estacio1'>
+    </p>
+	IMATGE PER SIMULAR EL COMPORTAMENT DESPRÉS DE GENERAT LA TAULA AMB LES DADES DE L'ESTACIÓ DE CODI 1<br>
+	<img src='./fase3.png'>
+</body>
+</html>

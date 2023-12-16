@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>
+		Exercicis Funcions
+		</title>   
+		 <style>
+		table, td, th {
+		  border: 1px solid black;
+		}
+		td {
+			  font-family: "Courier New";
+		}
+		table {
+		  border-collapse: collapse;
+		}
+		body {
+		  font-size:30px;
+		  font-family:arial;
+		}
+		h2 {
+			border-bottom-color:#3baea0;
+			border-bottom-width: 5px;
+			border-bottom-style: solid;
+			background-color:#93e4c1;
+		}
+		code {
+		  background-color:bisque;
+		  color:#ff5722;
+		}
+		pre {
+		  background-color:azure;
+		}
+		</style>
+		<script>
+			const JDPEX0 = [new Date('2/1/22'), new Date('02/1/22'),new Date('2/01/22'),new Date('2/1/2022'),new Date('02/01/2022')]
+			//console.info(JDPEX0);
+			const JDPEX1 = [
+							[new Date('2023-10-15'),5],
+							[new Date('2024-01-01'),3],
+							[new Date('2023-10-30'),4],
+							[new Date('2000-04-18'),2],
+							[new Date('2010-07-16'),1]
+							];
+		</script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<h2>EXERCICI 1. ARRAY DE DATES</h2>
+		<u><b>PART A</b></u>
+		<p>Dissenyar una funció que donada una data i un valor enter positiu, 
+		creï un array amb les dates compreses entre la data donada fins a la data més 
+		el valor enter positiu indicat, incloent-hi la data donada. 
+		Retornar aquest array. Cal suposar que els paràmetres s’han validat anteriorment. Fer ús de la variable <code>arguments</code> per fer ús dels paràmetres.</p>
+		<p><u><b>JOCS DE PROVA</b></u>
+		<table>
+			<tr><th>ENTRADA</th><th>SORTIDA</th></tr>
+			<tr><td>15/10/2023  5</td><td>15/10/2023,16/10/2023,17/10/2023,18/10/2023,19/10/2023</td></tr>
+			<tr><td>01/01/2024  3</td><td>01/01/2024,02/01/2024,03/01/2024</td></tr>
+			<tr><td>30/10/2023  4</td><td>30/10/2023,31/10/2023,01/11/2023,02/11/2024</td></tr>
+			<tr><td>18/04/2000  2</td><td>18/04/2000,19/04/2000</td></tr>
+			<tr><td>16/07/2010  1</td><td>16/07/2010</td></tr>
+		</table>	
+		<p>
+		<u><b>PART B</b></u>
+		<p>Quan es carregui la pàgina web invocar la funció dissenyada en la Part A 
+		passant els paràmetres d’un dels jocs de prova i mostrar l’array dins 
+		l’etiqueta HMTL <code>&lt;p&gt;</code> amb id <code>"out"</code>, però es vol mostrar una data cada segon, 
+		i la data s’ha de mostrar invocant el mètode <code>.toLocaleDateString()</code>
+		per tal que es visualitzi com en els exemples dels jocs de prova.</p>
+		<p id='out'></p>
+		<u><b>PART C</b></u>
+		<p>Quan es carregui la pàgina web i fent ús del mètode <code>forEach</code> recòrrer l'array proporcionat <code>JDPEX1</code> i invocar la funció dissenyada en la part A 
+		passant els paràmetres de les posicions 0 i 1 de cada element de l'array. Mostrar la sortida de la funció per consola. Mostrar les dates invocant el mètode <code>.toLocaleDateString()</code>
+		per tal que es visualitzi com en els exemples dels jocs de prova.</p>
+	</body>
+</html>

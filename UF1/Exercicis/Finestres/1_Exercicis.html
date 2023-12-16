@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <title>Exercicis WINDOW 1</title>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+    <script src="script4.js"></script>
+    <script src="script5.js"></script>
+    <script src="script6.js"></script>
+    <script src="script7.js"></script>
+  </head> 
+  <body>
+  <h2>Exercici 1. TRIO</h2>
+  <p>El botó ha de permetre obrir tres finestres. A dins de cada finestra hi ha d’haver el botó tancar que ens permeti tancar la finestra corresponent.</p>
+  <p><input type='button' id='boto1' value='Obrir 3 finestres'></p>
+  <h2>Exercici 2. 8 SEGONS</h2>
+  <p>El botó obrir ens ha de permetre obrir una finestra. Al cap de 8 segons d’haver estat oberta la finestra s’ha de tancar de manera automàtica.
+  </p>
+  <p><input type='button' id='boto2' value='Obrir Finestra i tancament automàtic passats 8 segons'></p>
+  <h2>Exercici 3. POSICIO</h2>
+  <p>Les caixes de text són per indicar les coordenades (X,Y) de la posició de l'extrem superior esquerra d'on cal situar una nova finestra. Un botó ha de permetre obrir la finestra situada en aquesta posició. Si els valors de X i Y no són vàlids avisar amb una alerta. I l'altre botó ha de permetre tancar la finestra si està oberta, en cas contrari informar amb una alerta.
+  </p>
+  <form>
+    <fieldset>
+        <legend>Formulari Exercici 3</legend>
+        Coordenada X: <input type='text' id='ent1'><br>
+        Coordenada Y: <input type='text' id='ent2'><br>
+        <input type='button' id='boto3a' value='Obrir'>
+        <input type='button' id='boto3b' value='Tancar'>
+		<p>Mides pantalla: <span id='pantalla'></span></p>
+    </fieldset>
+  </form>
+  <h2>Exercici 4. TEMPS OBERTURA</h2>
+  <p>
+    Quan l'usuari premi el botó s'obrirà una nova pestanya. Quan aquesta es tanqui, s'ha d'informar dins l'id 't' de la quantitat de segons que ha estat oberta.
+    <input type='button' id='boto4' value='Obrir'> 
+    <p>La pestanya ha estat oberta <span id='t'>X</span> segons.</p>
+  </p>
+  
+  <h2>Exercici 5. MOVIMENT</h2>
+  <p>El botó "OBRIR" ens ha de permetre obrir una finestra i que es mogui cap a la dreta 50 pixels cada 2 s. El botó "TANCAR" ha de permetre parar el moviment, tancar la finestra i mostrar la quantitat de segons que la finestra filla ha estat oberta.
+  <form>
+    <fieldset>
+        <legend>Formulari Exercici 5</legend>
+        <input type='button' id='boto5a' value='Obrir'>
+        <input type='button' id='boto5b' value='Tancar'>
+		<p>La finestra filla ha estat oberta: <span id='segons'></span> segons</p>
+    </fieldset>
+  </form>
+  </p>
+  <h2>Exercici 6. MOVIMENT CIRCULAR</h2>
+  <p>Dissenyar una modificació de la pàgina Web de l’exercici anterior on el moviment sigui la següent seqüència: dreta – baix – esquerra - dalt.
+  <br><input type='button' id='boto6' value='Obrir moviment circular'>
+</p>
+   <h2>Exercici 7. CREIXER</h2>
+   <p>Dissenyar una pàgina Web que permeti presentar una finestra en el moment de carregar la pàgina Web de mides 300x200 ubicada a l'extrem superior esquerra de la pantalla. Cada mig segon ha de modificar la grandària (progressivament de 100 en 100 píxels l'ampada i 50 en 50 l'alçada). Arribat al limit de la pantalla ha de disminuir fins al valor inicial. Això s’ha d’anar repetint fins prémer el següent botó.</p>
+    <input type='button' id='boto7' value='FI'>
+	<p id='dadesScreen'></p>
+  
+  </body>
+</html>

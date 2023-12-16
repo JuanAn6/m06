@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="Web learning">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+		<meta name="author" content="Ester Marsal Roca">
+		<meta charset="UTF-8">
+		<title>BONES PRÀCTIQUES</title>
+		  <script type="text/javascript">
+			  document.addEventListener('DOMContentLoaded',f_main);
+			  window.addEventListener('beforeunload',f_tancar);
+			  let f = null;
+			  function f_main()
+			  {
+				document.getElementById('botoG').addEventListener('click',f_gran);
+				document.getElementById('botoP').addEventListener('click',f_petit);
+				document.getElementById('botoT').addEventListener('click',f_tancar);
+				document.getElementById('botoO').addEventListener('click',f_obrir);
+			  }
+			  function f_obrir()
+			  {
+				if (f==null || f.closed)
+				{
+				  f = window.open("./subfinestre.html","","top=0,left=60,width=200, height=200");
+				} else
+				{
+				  f.focus();
+				}
+					document.getElementById("info").textContent="";
+			  }
+
+			  function f_gran()
+			  {
+				  if (f!=null && !f.closed)
+				  {
+					f.resizeTo(600,700);
+					f.focus();
+					document.getElementById("info").textContent="";
+				  }else{
+					document.getElementById("info").textContent="No hi ha finestra oberta";
+				  }
+			  }
+
+			  function f_petit()
+			  {
+				  if (f!=null && !f.closed) {
+					f.resizeTo(400,400);
+					f.focus();
+				  	document.getElementById("info").textContent="";
+				  }else{
+					document.getElementById("info").textContent="No hi ha finestra oberta";
+				  }
+			  }
+			  
+			  function f_tancar()
+			  {
+				  if (f!=null && !f.closed){
+					f.close();
+				  	document.getElementById("info").textContent="";
+				  }else{
+					document.getElementById("info").textContent="No hi ha finestra oberta";
+				  }
+					
+				
+			  }
+		  </script>
+</head>
+	<body>
+		<input type='button' value='Gran' id="botoG"><br>
+		<input type='button' value='Petita' id="botoP"><br>
+		<input type='button' value='Tancar' id="botoT"><br>
+		<input type='button' value='Obrir' id="botoO"><br>
+		<p id="info"></p>
+	</body>
+</html>

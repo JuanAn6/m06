@@ -1,0 +1,85 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>UF 2 - JSON</title>
+      
+      <script language = "javascript" src='./json1.json' ></script>	
+      <script language = "javascript" src='./script.js' ></script>	
+   </head>
+   <body>
+       <h1><abbr title="JavaScript Object Notation">JSON</abbr></h1>
+       <p>
+       És un format per l’intercanvi de dades. Permet descriure les dades amb una sintaxi dedicada que es fa servir per identificar i gestionar informació. El creador d’aquesta notació és en Douglas Crockford.
+       </p>
+       <p>
+       JSON va néixer com una alternativa a XML, el seu fàcil ús en JavaScript ha generat un gran nombre de seguidors, perquè és fàcil de llegir i escriure, a més és més, és concís. No obstant, XML és superior tècnicament perquè és un llenguatge de marques, mentre que JSON és simplement un format per intercanviar dades.
+       </p>
+       <p>
+        Una de les avantatges és que pot ser llegit per qualsevol llenguatge de programació, per tant, pot ser emprat per l’intercanvi d’informació entre diferents tecnologies.        
+        </p>
+       <p>
+        Tant JSON com XML son usats per exactament el mateix, la única diferència es que JSON és la versió "lleugera" de XML. Consumeix menys recursos “parsejar” (analitzar sintàcticament) un JSON que un XML.       
+       </p>
+        <p>
+        <table>
+            <tr>
+            <td><img src='./json.bmp'></td>
+            <td><img src='./jsonVSxml.bmp'></td>
+            </tr>
+        </table>
+        </p>
+       <p>
+        Encara que sembli que JSON es fa anar per JavaScript, JSON és un format d’intercanvi de dades independent del llenguatge de programació.
+       </p>
+       <p>
+       Els arxius amb informació en aquest format acostumen a tenir extensió .json.
+       </p>
+       <h2>Usos de JSON</h2>
+       <ul>
+            <li>Per escriure aplicacions JavaScript</li>
+            <li>Per transmetre dades entre el servidor i aplicacions web</li>
+            <li>Serveis Web i API utilitzen el format JSON per a proporcionar les dades públiques</li>
+            <li>En llenguatges de programació moderns (PHP, PERL, PYTHON, RUBY, JAVA).</li> 
+       </ul>
+       <h2>Tipus de dades JSON</h2>
+       Dins de les dades JSON, es poden distingir dues estructures que es poden enllaçar entre elles sempre que calgui:
+       <ul>
+            <li><b>Objecte JSON:</b>Una col•lecció de parelles nom:valor. És el què seria un registre, tupla o estructura de C o un objecte en C++.
+                Exemple:
+                <pre><code>
+                <b>// sintaxi per definir camps nous</b>
+                 { key : value }
+                <b>// exemple</b>
+                  let data = 
+                            {
+                                nom : "Ramon",
+                                cognom_1 : "Guerra",
+                                unio: 2012
+                            };
+                <b>// accés</b>
+                  console.info(data.unio);
+                </code></pre>
+            </li>
+            <li><b>Array JSON:</b> Una llista ordenada de valors (Un array). Veure exemples en els arxius adjunts: <i>json1.json</i> i <i>script.js</i>
+            </li>
+       </ul>
+       <h2>Sintaxi de la notació JSON</h2>
+       Un objecte Json és un conjunt desordenat de parells nom/valor. Un objecte comença amb { clau d’obertura i acaba amb } clau de tancament.<br>
+       Cada nom es segueix per : dos punts i els valors es separen per , coma.<br>
+       <img src='./json1.bmp'><br>
+       Si es vol definir arrays en JSON ho faríem començant pel [ claudàtor esquerra i l’acabaríem amb ] claudàtor dret. Els valors de l’array separats per , coma<br>
+       <img src='./json2.bmp'><br>
+       Qualsevol valor representat en JSON pot ser un string entre cometes dobles, número, booleà o null. També poden ser valors nous, objectes o nous arrays:<br>
+       <img src='./json3.bmp'><br>
+       <b>Cadenes de caràcters:</b> Les cadenes de caràcters en JSON són col•leccions de zero o més caràcters Unicode entre cometes dobles (“). Utilitzant la barra invertida com a seqüència d’escapament:</b><br>
+       <img src='./json4.bmp'><br>
+       <b>Valors numèrics: </b>Els valors numèrics en JSON són iguals a C i Java, amb l’excepció de que no s’utilitzen els formats octals i hexadecimals.
+       <h2>JSON a la pràctica</h2>
+       <p>
+       En la pràctica JSON s’utilitza per a crear estructures de dades en bases de dades orientades a fitxers (no a taules).<br>
+       La majoria de bases de dades de les xarxes socials estan basades en fitxers perquè són més ràpides al no haver de duu el control de les integritats referencials.<br>
+       És aquí on és important l’ús de JSON.<br>
+       JSON és un subconjunt de la notació d’objectes de JavaScript, per tant és pot utilitzar a dins del llenguatge sense definir res addicional.
+       </p>
+   </body>
+</html>

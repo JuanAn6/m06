@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>EXERCICIs classe Math i Number</title>
+        <script src="script.js"></script>
+        
+</head>
+<body>
+        <h1>EXERCICIs classe Math i Number</h1>
+        <h2>No es pot editar la part de codi HTML que hi ha dins l'etiqueta body</h2>
+        <h2>Cal realitzar els 4 exercicis dins un arxiu JS independent de l'arxiu HTML</h2>
+        <h3>Exercici 1</h3>
+        <p>A partir del valor que indiqui l'usuari, validar que té 3 decimals i si és vàlid cal fer els càlculs següents: meitat amb 2 decimals, quadrat, cub, arrel quadrada. Mostrar els resultats dins de l'etiqueta <i>p amb id resultats</i></p>
+        <form>
+            <fieldset><legend>Classe Math i Number</legend>
+                Indicar un valor numèric de 3 decimals: <input type='text' id='num'>
+                <input type='button' value='FER CALCULS' id='boto'>
+            </fieldset>
+        </form>
+        <p id='resultats'></p>
+        <h3>Exercici 2</h3>
+        <form>
+            <fieldset><legend>Classe Math i Number</legend>
+                Indicar 3 números qualsevols (només cal que siguin diferents entre ells): <br>
+                num1: <input type='text' id='num1'>,
+                num2: <input type='text' id='num2'>,
+                num3: <input type='text' id='num3'>
+                <input type='button' value='CERCAR MÍNIM I MÀXIM' id='boto2'>
+            </fieldset>
+        </form>
+        <p>Quan l'usuari premi el botó cal:</p>
+        <ul>
+            <li>Controlar que s'han inserit 3 valors numèrics diferents entre ells.</li>
+            <li>En cas contrari esborrar els 3 valors i mostrar un avis via alerta</li>
+            <li>Si tot és correcte, presentar el més gran i el més petit a dins de les etiquetes <i> amb id gran i petit</i></li>
+            <li>Cal fer ús dels mètodes adients de la classe Math per cercar el més gran i el més petit. No fer ús de cap estructura condicional.</li>
+        </ul>
+        <div id='gran'></div>
+        <div id='petit'></div>
+        <h3>Exercici 3</h3>
+        <p>Dissenyar un guió que generi una aposta a la loteria primitiva de manera automàtica.</p>
+        <p>Aquesta consisteix en generar 6 números diferents entre ells.</p>
+        <p>Els valors han de ser entre 1 i 49.</p>
+        <p>A més hi ha un 7è número que correspon al reintegrament, valor entre 0 i 9.</p> 
+        <p><b>Observació:</b>
+        Els valors generats cal mostrar-los ordenats de menor a major. Tenint present que els números menors de 10 cal afegir un 0 al davant.</p>
+        
+        <table border='1'>
+            <thead><caption>APOSTA GENERADA</caption></thead>
+            <tr><td>01</td><td>02</td><td>03</td><td>04</td><td>05</td><td>06</td></tr>
+            <tr><td colspan='5'>REINTEGRAMENT</td><td colspan='1'>[0-9]</td></tr>
+        </table>
+        <p>Exemple:</p>
+        <img src='./primitiva.png'>
+        <form>
+            <fieldset><legend>Classe Math i Number</legend>
+                <input type='button' value='GENERAR APOSTA LOTERIA PRIMITIVA' id='boto3'>
+            </fieldset>
+        </form>
+
+        <h3>Exercici 4</h3>
+        <p>Dissenyar un guió que generi una quiniela de futbol de manera automàtica.</p>
+        <p>visualitzar l'array de valors generats tot senser en <i>l'etiqueta span amb id quiniela</i>: <span id='quiniela'></span></p>
+        <p>És a dir, una cosa de l'estil: [1,X,2,1,1,1,2,2,X,1,X,X,2,1,1]</p>
+        <img src='./quiniela.png'>
+        <form>
+            <fieldset><legend>Classe Math i Number</legend>
+                <input type='button' value='GENERAR QUINIELA FUTBOL' id='boto4'>
+            </fieldset>
+        </form>
+        
+</body>
+</html>

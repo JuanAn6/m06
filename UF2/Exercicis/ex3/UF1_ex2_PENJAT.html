@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>
+		Exercicis Funcions
+		</title>   
+		 <style>
+		table, td, th {
+		  border: 1px solid black;
+		}
+		td {
+			  font-family: "Courier New";
+		}
+		table {
+		  border-collapse: collapse;
+		}
+		body {
+		  font-size:30px;
+		  font-family:arial;
+		}
+		h2 {
+			border-bottom-color:#3baea0;
+			border-bottom-width: 5px;
+			border-bottom-style: solid;
+			background-color:#93e4c1;
+		}
+		code {
+		  background-color:bisque;
+		  color:#ff5722;
+		}
+		pre {
+		  background-color:azure;
+		}
+		</style>
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<h2>EXERCICI 2. EL PENJAT</h2>
+		<p>Dissenyar una funció que rebi dues cadenes de text (fer ús d'<code>arguments</code>). La primera serà la paraula que s’ha d’endevinar en una partida del joc del penjat. La segona conté el conjunt de lletres que l’usuari ha anat indicant durant la partida. La funció retornarà una de les següents paraules: SALVAT, PENJAT, MORT. La primera paraula s’ha de retornar en cas que l’usuari hagi endevinat la paraula, fent menys de 7 errors. La segona, en cas que la partida estigui a mitges. I la paraula MORT indica que l’usuari ha fet 7 o més errors, sense endevinar la paraula.</p>
+		<p>Tenir present que el jugador pot repetir algunes lletres. En aquest cas, les segones aparicions no comptaran mai com errada, en cas de ser-ho. </p>
+		<p>També poden aparèixer lletres després que la partida ja hagi finalitzat, aquestes poden ser ignorades.</p>
+		<p>Compte amb les lletres que es repeteixin en la paraula a endevinar.</p>
+		<p><u><b>JOCS DE PROVA</b></u>
+		<table>
+			<tr><th>ENTRADA</th><th>SORTIDA</th></tr>
+			<tr><td>penjat<br>aeioumlnpsc</td><td>MORT</td></tr>
+			<tr><td>endevinalla<br>aeioumlnpsxfp</td><td>MORT</td></tr>
+			<tr><td>jazz<br>aeiou</td><td>PENJAT</td></tr>
+			<tr><td>popurri<br>aeioumnlrr</td><td>PENJAT</td></tr>
+			<tr><td>internet<br>aeiountrtr</td><td>SALVAT</td></tr>
+			<tr><td>espantaocells<br>aeiousmnltpcfqrwt</td><td>SALVAT</td></tr>
+		</table>
+		<br>Recòrrer l'array proporcionat <code>JDPEX2</code> fent ús del mètode <code>forEach</code>, per provar-ne el funcionament. 
+		</p>
+	</body>
+</html>

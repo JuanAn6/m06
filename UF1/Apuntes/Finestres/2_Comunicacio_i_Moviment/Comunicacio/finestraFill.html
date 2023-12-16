@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>FINESTRA FILL</title>
+  </head> 
+  <body>
+    <p><input type='button' value='TANCAR' id='bTancar'></p>
+    <p><input type='button' value='MODIFICAR FINESTRA PARE' id='bEditar'></p>
+    <div id='valorsFF'></div>
+    <p>Des de la sub - finestra es pot editar la finestra pare mitjançant la propietat: window opener</p>
+    <p><img src='./windowsComunication.bmp'></p>
+    <script>
+    document.addEventListener('DOMContentLoaded',main);
+	let fPare = window.opener;
+    function main()
+    {
+        document.getElementById('bTancar').addEventListener('click', function ()
+        {
+            window.close();
+        });
+        document.getElementById('bEditar').addEventListener('click',editar);
+    }
+     function editar()
+     {
+        fPare.document.getElementById('valors1').textContent = ' Passant informació ';
+		window.opener.document.getElementById('valors1').style.color = 'blue';	
+     }
+    </script>
+</body>
+</html>

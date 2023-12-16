@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html">
+      <title>
+      Expressions regulars
+      </title>
+      <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      </style>
+      <script src="expr2.js"></script>
+  </head>
+  <body>
+      <h2>EXERCICI 1</h2>
+      <form>
+      <fieldset>
+        <legend>Esdeveniment onClick</legend>
+        <p>Quan l'usuari premi el botó amb id b1, ubicar dins les etiquetes amb id's a1,a2 i a3 un missatge indicant si el valor de la caixa de text respectiva (amb id's c1,c2,c3) és vàlida o no.</p>
+        <table>
+      
+          <tr><td>9 xifres numèriques, agrupades de 3 en 3 i 
+          separades per guions.</td><td> Exemple: 123-456-789.</td><td>
+          <input type='text' id='c1' size='11'><span id='a1'></span></td></tr>
+          
+          <tr><td>9 xifres numèriques, les 3 primeres separades per un espai 
+          de les 6 restants. </td><td>Exemple 123 456789</td><td>
+          <input type='text' id='c2' size='10'><span id='a2'></span></td></tr>
+          
+          <tr><td>telèfon amb numeració internacional, primer el prefix 
+          internacional +, seguit de dues o tres xifres, un espai en blanc i 9 xifres consecutives. </td><td>
+          Exemple +34 123456789</td><td>
+          <input type='text' id='c3' size='13'><span id='a3'></span></td></tr>
+        </table>
+        <button id='b1'>Validar dades</button>
+      </fieldset>
+      </form>
+      <h2>EXERCICI 2</h2>
+      <p>
+        Dins la caixa de text es poden indicar dades alfanumèriques.<br>
+        La caixa de text ha de tenir un valor per defecte. El que tu vulguis<br> 
+        Al prémer el botó amb id 'b2', comptar la quantitat de vegades que apareix el patró "NV"<br>
+        Si no apareix cap vegada, mostrar un missatge en l'etiqueta span amb id 'aa'.<br>
+        Si apareix més de tres vegades, mostrar en l'etiqueta span amb id aa la quantitat de vegades que apareix i restaurarà la caixa de text amb el seu valor per defecte inicial.<br>
+      </p>
+      <form>
+      <fieldset>
+        <legend>Quantitat d'ocurrències</legend>
+        Caixa de text amb valor per defecte: <input type='text' id='c'><span id='aa'></span><br>
+            <button id='b2'>Validar dades</button>
+      </fieldset>
+      </form>
+      <h2>EXERCICI 3</h2>
+      <p>
+        Es vol que la caixa de text d'aquí sota, amb id 'tel', permeti indicar 9 números en grups de 3, separats per un espai en blanc cada grup.<br><img src='mobilOK.png'><br>
+        L'estil de la caixa ha de canviar en el moment que l'usuari comenci a escriure en la caixa de text (esdeveniment <code>'onInput'</code>)<br>
+        <img src='mobilKO.png'><br>
+        I l'estil de la caixa ha de canviar de nou, en el moment que el valor compleixi els requisits.<br>
+      </p>
+      <form>
+      <fieldset>
+        <legend>Esdeveniment onInput</legend>
+        Número de mòbil: <input type='text' id='tel'><br>
+      </fieldset>
+      </form>
+      <h2>EXERCICI 4</h2>
+      <p>
+      </p>
+      </p>
+      <form>
+      <fieldset>
+        <legend>Esdeveniment onBlur</legend>
+        <p>Validar les següents cadenes en el moment que cada caixa de text perd el "focus". Indicar si la cadena és vàlida o no dins l'etiqueta amb id "a"+[dni,nif,cif,mob,mail,data], respectivament.</p>
+        <ol>
+          <li>DNI: 8 números <input type='text' id='dni'><span id='adni'></span></li>
+          <li>NIF: 8 números i una lletra, no cal validar la lletra<input type='text' id='nif'><span id='anif'></span></li>
+          <li>CIF: una lletra i 8 números<input type='text' id='cif'><span id='acif'></span></li>
+          <li>Telèfon mòbil: possible separador (espia en blanc, guió o punt), no cal comprovar la posició del separador<input type='text' id='mob'><span id='amob'></span></li>
+          <li>mail: trobar @ i punt. La @ abans del punt. Després del punt que hi hagi 2 o 3 lletres<input type='text' id='mail'><span id='amail'></span></li>
+          <li>Data en format XX-XX-XX o bé XX/XX/XX<input type='text' id='data'><span id='adata'></span></li>
+        </ol>
+
+      </fieldset>
+      </form>
+      <h2>EXERCICI 5</h2>
+       <form>
+          <fieldset>
+            <legend>Codi postal</legend>
+            <p>Comprovar si el valor indicat dins l'etiqueta amb id 'cp' és un <a href='https://ca.wikipedia.org/wiki/Codi_postal'>codi postal d'Espanya</a> vàlid. Mostrar el resultat dins l'etiqueta amb id 'cpValid'.<br>
+            Fer la validació en el moment que l'usuari enganxi dins la caixa de text un valor.</p>
+            <input type='text' id='cp'><span id='cpValid'></span>
+          </fieldset>
+          </form>
+      
+      <h2>EXERCICI 6</h2>
+        <form>
+          <fieldset>
+            <legend>Adreça MAC</legend>
+              <p>Comprovar si el valor indicat dins l'etiqueta amb id 'mac' és una <a href='https://ca.wikipedia.org/wiki/Adreça_MAC'>adreça mac</a> correcta. Mostrar el resultat dins l'etiqueta amb id 'macValid'.<br>
+              Fer la validació en el moment que l'usuari enganxi dins la caixa de text un valor.<br>
+              Passats 3 segons de mostrar el resultat, netejar la caixa de text i el missatge.</p>
+            <input type='text' id='mac'><span id='macValid'></span>
+          </fieldset>
+        </form>
+      <h2>EXERCICI 7</h2>
+        <form>
+          <fieldset>
+            <legend>Extensió d'un arxiu</legend>
+              <p>L'usuari ha d'indicar la 'ruta' cap a un arxiu, amb el nom i l'extensió d'aquest. Una vegada indicat el valor, mostrar dins l'etiqueta amb id 'nom' el nom de l'arxiu i dins l'etiqueta amb id 'ex' l'extensió.<br>
+              Si el valor no és una 'ruta' mostrar una alerta i netejar la caixa de text.
+              </p>
+            <input type='text' id='ruta'> <span id='nom'></span> <span id='ex'></span>
+          </fieldset>
+        </form>
+  </body>
+</html>

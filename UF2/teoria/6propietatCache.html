@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    Exemple propietats d'una funció personalitzades
+    </title>   
+    <script type="text/javascript" language="javascript" src='./6propietatCache.js'>
+    </script>
+</head>
+<body>
+    <h2>UNA FUNCIÓ AMB MÉS PROPIETATS</h2>
+    <p>Tot seguit es mostra el codi de la funció primer, la qual té una propietat anomenada cache.
+    La propietat cache és un "array" "associatiu", és a dir, un array que desa diversos valors, però les seves posicions no són correlatives
+    <pre><code>
+        function esPrimer(valor){
+            if(!esPrimer.cache) {
+                esPrimer.cache = {}; // si no hi ha cache de resultats, la creem
+            }
+             
+            if(esPrimer.cache[valor] != null) { // resultat ja calculat
+                return "&lt;b&gt;" + esPrimer.cache[valor] + "&lt;/b&gt;";
+            }
+             
+            // cal calcular-lo perquè no tenim el resultat
+             
+            let primer = (valor != 1) // 1 no és primer
+             
+            // busquem un divisor superior a 2 i inferior a valor
+             
+            for(let i = 2; i &lt; valor; i++){
+                  if(valor % i == 0){
+                      primer = false;
+                      break;
+                  }
+            }
+            if (primer)
+              esPrimer.cache[valor] = valor;
+            else
+              esPrimer.cache[valor] = 'El '+valor+' no és primer';
+
+            console.info(esPrimer.cache);
+            return valor;
+    </code></pre>
+    </p>
+    <p id='a'></p>
+    <p id='b'></p>
+    <p id='c'></p>
+	<p>
+		<h2>EXERCICI</h2>
+		<p>
+			Modificar la funció esPrimer, enlloc de fer ús de la dada membre cache es vol desar la mateixa informació però dins del Web Storage del navegador. En única variable o en diferents, com desitgi el programador. Per tant, abans de fer cap càlcul s'haurà de mirar si ja existeix el número en el Web Storage i mostrar el resultat.
+		</p>
+	
+	</p>
+</body>
+</html>

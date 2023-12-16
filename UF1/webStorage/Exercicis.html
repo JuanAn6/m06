@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Web learning">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+		<meta name="author" content="Ester Marsal Roca">
+		<title>exercises with web Storage</title>
+		<script src="script1.js"></script>
+		<script src="script2.js"></script>
+	</head> 
+	<body>
+		<h1>1.</h1> 
+			<p>A partir del formulari: </p>
+			<form id='form1'>
+				<fieldset>
+					<legend>Formulari </legend>
+					Nom: <input type='text' id='nom1'><br>
+					Adreça postal: <input type='text' id='adreca'><br>
+					<input type='submit' id='enviar' value='Desar'>
+					<input type='button' id='recuperar' value='Recuperar'>
+					<input type='button' id='esborrar' value='Esborrar'>
+				</fieldset>
+			</form>
+			<p>
+			Al prémer al botó desar, guardar en el WebStorage les dues dades. Controlar que els camps estiguin plens</p>
+			<p>
+			<p>Controlar que no existeixi ja una clau amb el mateix nom, si és el cas cal avisar l'usuari amb un window.confirm per tal de saber si es procedeix amb el canvi o bé es cancel·la. 
+			Mostrar dins el missatge del window.confirm el valor que actualment està emmagatzemat.</p>
+			<p>Passats 2 segons de tocar el botó DESAR cal netejar els valors de les caixes de text del formulari si tot ha anat bé.</p>
+			Es RECARREGA LA PÀGINA i/o al tornar-lo a obrir, si existeixen les data, s’omplen les dades del formulari automàticament.</p> 
+			<p>El botó d’Esborrar elimina les dues dades del WebStorage, es RECARREGA LA PÀGINA WEB i es comprova que no carrega res al formulari.
+			</p>
+			
+		<h1>2.</h1> 
+			<p>A partir del formulari: </p>
+			<form>
+				<fieldset>
+					<legend>Definir color de fons</legend>
+					Escull un color de fons per la pàgina: <select id='color'>
+						<option>Color 1</option>
+						<option>Color 2</option>
+						<option>Color 3</option>
+						</select>
+					<br>
+					<input type='button' id='escollir' value='Escollir color'>
+				</fieldset>
+			</form>
+			<p>
+			l’usuari tria un color de fons entre tres de diferents. 
+			</p><p>
+			La propera vegada que l’usuari RECARREGUI la pàgina web ha de tenir el color que va triar.
+			</p>
+		<h1>3.</h1> 
+			Desar en el WebStorage l’última vegada que es va visitar la pàgina. Després cal que mostri la data completa d’aquesta última visita en el div amb id data. I cada cop que es recarregui la pàgina, si existeix el valor, es motrarà en el <code>div amb id data</code>
+			<div id='data' style='color:green'>No registrada la última visita</div>
+		<h1>4.</h1> 			
+			<form>
+				<fieldset>
+					<legend>Cercar al WebStorage</legend>
+					Clau: <input type='text' id='key'><br>
+					<input type='button' id='ex4' value='Recuperar'>
+				</fieldset>
+			</form>
+			<p>
+		Al premer el botó amb id ex4 si existeix en el localStorage una valor amb la clau indicada, es visualitzi. En cas contrari, informar a l'usuari com es consideri oportú.
+		</p>
+	</body>
+</html>

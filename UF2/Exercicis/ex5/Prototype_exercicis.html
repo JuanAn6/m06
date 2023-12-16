@@ -1,0 +1,198 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+    Exercicis Prototype
+    </title>   
+     <style>
+    table, td, th {
+      border: 1px solid black;
+    }
+    td {
+          font-family: "Courier New";
+    }
+    table {
+      border-collapse: collapse;
+    }
+    body {
+      font-size:30px;
+      font-family:arial;
+    }
+    h2 {
+        border-bottom-color:#3baea0;
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+        background-color:#93e4c1;
+    }
+    code {
+      background-color:bisque;
+      color:#ff5722;
+    }
+    pre {
+      background-color:azure;
+    }
+    </style>
+    <script src="script.js"></script>
+    <script src="ex1.js"></script>
+    <script src="ex1_2.js"></script>
+    <script src="ex2.js"></script>
+    <script src="ex3.js"></script>
+    <script src="ex4.js"></script>
+    <script src="ex5.js"></script>
+    <script src="ex10.js"></script>
+    <script src="ex11.js"></script>
+
+</head>
+<body>
+    <h2>Exercici 1. Versió 1. FUNCIÓ</h2>
+    <p>Escriure una funció de nom <code>"move"</code> que donats 3 paràmetres <code>(array, posX, posY)</code> , permeti intercanviar dos element d'un array d'una posició a un altre respectivament.
+    </p>
+    <h2>Exercici 1. Versió 2. MÈTODE</h2>
+    <p>Escriure un nou mètode de nom <code>"canvi"</code> pels objectes de tipus <code>"Array"</code> que, permeti intercanviar dos element d'un array d'una posició a un altre. Els paràmetres del mètode seran les posicions on es vol fer l'intercanvi.<br>
+    La sintaxi del mètode serà la següent:<br>
+    <pre> lògic = Array.canvi(pos1,pos2);</pre>
+    Exemples:</p>
+    <pre> [10, 20, 30, 40, 50].canvi(0, 2);</pre> 
+    <pre> [30, 20, 10, 40, 50]</pre>
+    El mètode retornarà un lògic que indicarà si el canvi s'ha pogut duu a terme amb exit o no.<br>
+    Els 2 paràmetres són obligatoris.<br>
+    Han de ser valors diferents i enters positius.<br>
+    <h2>Exercici 2. </h2>
+    <p>
+    	Dissenyar un nou mètode pels objectes de tipus String amb la següent sintaxi:<br>
+        <pre>String.checkCase();</pre>
+        Valor retornat:<br>
+		<code>"upper"</code>: si la cadena només conté caràcters en majúscules<br>
+		<code>"lower"</code>: si només conté minúscules<br>
+		<code>"mix"</code>: si hi ha caràcters de tota mena<br>
+        En qualsevol altre circumstància erronea, cal retornar <code>"error"</code>
+    </p>
+    <h2>Exercici 3. </h2>
+    <p>
+    Dissenyar un nou mètode pels objectes de tipus String amb la següent sintaxi:<br>
+        <pre>String.checkNumbers();</pre>
+        Valor retornat:<br>
+        <code>true</code>: si conté caràcters numèrics<br>
+			  <code>false</code>: en qualsevol altre cas
+    </p>
+    <h2>Exercici 4. </h2>
+    <p>
+        Dissenyar un nou mètode pels objectes de tipus String amb la següent sintaxi:
+        <pre>String.quantitat(lletra);</pre>
+	Paràmetres:<br>
+			un caràcter qualsevol<br>
+	<br>
+	Valor retornat:<br>
+			 quantitat de caràcters que hi ha dins l’String com l’indicat<br>
+    </p>
+    <h2>Exercici 5. </h2>
+    <p>Programar el mètode clone per la classe Array<br>
+    En JS no és pot fer el següent<br>
+      <pre>   let x = j;</pre>
+    Si j és un array, no es copia el contingut, es copia la referència, per fer una copia d’un array caldrà fer-ho diferent, per exemple:<br>
+      <pre>   let copia = myArray.slice(0);</pre>
+    </p>
+    <h2>Exercici 6. </h2>
+    <p>Descriure per què serveix el següent prototype:
+    <pre>
+        String.prototype.queFaig = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1)
+        }
+    </pre>
+    </p>
+    <h2>Exercici 7. </h2>
+    <p>Programar el mètode static validar per la classe Date amb la següent sintaxi:<br>    <pre>
+        Date.validar(String);</pre>
+        Valor retornat:<br>
+            Un objecte <code>Date</code>: si conté la data és vàlida<br>
+            <code>false</code>: en qualsevol altre cas<br>
+    <input type='date' id='ex7'> <br>
+    <input type='button' id='validarD' value='Validar Data'>
+    <br>
+    
+    </p>
+    <h2>Exercici 8. </h2>
+    <p>Programar un nou mètode pels objectes de la classe Date amb la següent sintaxi:<br>    <pre>
+        Date.passadaActual();</pre>
+        Valor retornat:<br>
+      <code>true</code>: si la data que invoca el mètode és del passat respecte el dia d'avui<br>
+			<code>false</code>: en qualsevol altre cas (avui o data del futur)<br>
+    <input type='date' id='ex8'> <br>
+    <input type='button' id='passat' value='DATA PASSADA'>
+    </p>
+    <h2>Exercici 9. </h2>
+      <p>
+        Dissenyar un nou mètode pels objectes de tipus Array amb la següent sintaxi:<br>
+        <pre>
+        Array.meitat(parametre1);</pre>
+        Paràmetres:
+        <pre>
+        un array</pre>
+        Valor retornat:
+        <pre>
+        un array</pre>
+        En qualsevol altre circumstància erronea, retorna array buit
+        <p>L'objectiu és que el mètode retorna la primera meitat de l'array. És a dir, si l'array té n elements, ha de retornar un array amb els elements de les posicions 0 fins (n/2)-1 i en el paràmetre1 retornar l'altre meitat de l'array de la posició (n/2) a n.</p>
+      </p>
+    <h2>Exercici 10. </h2>
+        <p>
+          Dissenyar un nou mètode pels objectes de tipus Date amb la següent sintaxi:<br>
+          <pre>
+          Date.meitat(parametre1);</pre>
+          Paràmetres:
+          <pre>
+          una data</pre>
+          Valor retornat:
+          <pre>
+          una data</pre>
+          En qualsevol altre circumstància erronea, retorna -1
+          <p>L'objectiu és que el mètode retorna quina de les dues dates (la que invoca el mètode o la que es passa per paràmetre) és més pròxim al dia d'avui.</p>
+        </p>	
+  <h2>Exercici 11. </h2>
+    <p>
+    	Dissenyar un nou mètode pels objectes de tipus String amb la següent sintaxi:<br>
+        <pre>   String.fill(valor,posicioInici,posicioFi);</pre>
+		Paràmetres:<br>
+		    <code>valor</code>: caràcter de qualsevol tipus, però de longitud 1. És obligatori.<br>
+        <code>posicioInici</code>: valor natural superior o igual a 0. És opcional.<br>
+        <code>posicioFi</code>: valor natural, superior o igual al paràmetre "posicioInici". És opcional.<br>
+		Valor retornat:
+		<pre>	String</pre>
+        En qualsevol altre circumstància erronea, retorna String "ERROR"
+        <p>L'objectiu és que el mètode retorna un nou String amb el mateix contingut 
+        que l'String que invoca el mètode, menys les posicions de la "posicioInici" a "posicioFi" 
+        que seran modificades pel valor indicat en el primer paràmetre.</p>
+        <p>En cas de no indicar "posicioFi" la modificació es farà de la "posicioInici" fins al final de l'String.</p>
+        <p>En cas de no indicar ni "posicioInici", ni "posicioFi" la modifició es farà de tota la longitud de l'String.</p>
+        <table>
+            <caption>JOCS DE PROVA</caption>
+            <thead>
+            <tr>
+                <th>CRIDA AL MÈTODE</th>
+                <th>VALOR RETORNAT</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>"Els dimarts 14/12/21 hi ha examen de UF2".fill(" ",21,26)</td>
+                <td>"Els dimarts 14/12/21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;examen de UF2"</td>
+            </tr>
+            <tr>
+                <td>"Els dimarts 14/12/21 hi ha examen de UF2".fill("s",21,26)</td>
+                <td>"Els dimarts 14/12/21 sssss examen de UF2"</td>
+            </tr>
+            <tr>
+                <td>"Els dimarts 14/12/21 hi ha examen de UF2".fill("x",21)</td>
+                <td>"Els dimarts 14/12/21 xxxxxxxxxxxxxxxxxxx"</td>
+            </tr>
+            <tr>
+                <td>"Els dimarts 14/12/21 hi ha examen de UF2".fill("ss",21,26)</td>
+                <td>"ERROR"</td>
+            </tr>
+            </tbody>
+            
+        </table>
+    </p>        
+</body>
+</html>

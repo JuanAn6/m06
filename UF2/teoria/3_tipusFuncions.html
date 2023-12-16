@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    UF 2 - FUNCIONS
+    </title>   
+    <style>
+    code{
+        font-family:courier;
+        }
+    </style>
+    <script src='./3_tipusFuncions.js'></script>
+</head>
+<body>
+    <h2>TIPUS DE FUNCIONS</h2>
+    <p>S'han vist les funcions autoexecutables, però també existeixen altres tipus de funcions. </p>
+    <h2>FUNCTION EXPRESSION i FUNCTION ARROW</h2>
+    <p>Les funcions com expressions són les que es fan servir en la notació arrow. Es poden definir amb o sense nom.
+            <pre>
+                <code>
+                 const add = function (a,b)
+                            {
+                                return a+b;
+                            }
+                </code>
+            </pre>
+     Altrernativament, amb notació arrow:
+            <pre>
+                <code>
+                 const afegir = (a,b) =>  a+b;
+                </code>
+            </pre>
+     I si tenen més d'una instrucció, amb notació arrow:
+            <pre>
+                <code>
+                 const potencia = (a,b) =>
+                    {  
+                        let res = 1;
+                        for (let i=0;i&lt;b;i++)
+                        {
+                            res = res*a;
+                        }
+                        return res;
+                    }
+                </code>
+            </pre>
+    </p>
+	<h2>FUNCIONS CONSTRUIDES</h2>
+    <p>També es poden crear funcions fent ús del constructor new. Però el seu ús no és molt recomanable. Un constructor és un element de la POO que ens permet reservar la memòria dinàmicament de l’element que volem crear.
+            <pre>
+                <code>
+                 const add = new Function('a','b','return a+b');
+                 const frasePersonal = new Function('a','b','return alert("què li passa a la "+a+" amb la "+b);');
+                </code>
+            </pre>
+    A dins del constructor, es poden posar els arguments que es vulguin. JavaScript sempre interpretarà que l’últim argument són les línies de codi de la funció.
+    <h2>FUNCIONS COM A PARÀMETRES</h2>
+    <p>De fet ja s'ha fet ús de les funcions com a paràmetre en els temporitzadors setInterval i setTimeout. Exemple:
+            <pre>
+                <code>
+                 function map(<b>f</b>,a) {
+                      let result = [];
+                      let i;
+                      for (i = 0; i &lt; a.length; i++)      
+                        {
+                        result[i] = <b>f(a[i]);</b>
+                        }
+                      return result;
+                    }
+                
+                const multiplicar= function(x) { return x * x * x;} 
+                </code>
+            </pre>   
+            Exemple de crida a la funció que té una funció com a paràmetre:
+            <pre>
+                <code>
+                map(multiplicar, [0, 1, 2, 5, 10]);
+                </code>
+            </pre>   
+            retorna 
+            <pre>
+                <code>
+                [0, 1, 8, 125, 1000]
+                </code>
+            </pre>   
+            També es pot definir una funció en funció d’una condició.Exemple:
+            <pre>
+                <code>
+                    let myFunc;
+                    if (num == 0){
+                      myFunc = function(theObject) {
+                        theObject.make = "Toyota";
+                      }
+                    }
+                </code>
+            </pre>   
+</body>
+</html>

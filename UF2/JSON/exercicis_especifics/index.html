@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="Author" content="..............">
+    <title>
+    EXERCICI
+    </title>   
+    <style>
+    body {
+    text-align: left;
+    font-family: "Helvetica", "Arial Black", "Impact", "Lucida Sans Unicode", "Tahoma", "Verdana", "Lucida Console";
+    font-size: medium;
+    background-color: #ccffcc;
+    }
+    </style>
+</head>
+<body>
+      <h1>EXERCICI</h1>
+       <h2>Cal treballar amb la variable JSON de nom <i>prov</i> que hi ha dins l'arxiu <i>prov.json</i> que es proporciona</h2>
+       <h2>EXERCICI 1</h2>
+       <p>A partir del següent formulari, cal preparar l'etiqueta "select" perquè es mostrin tots els noms de província. Quan l'usuari premi el botó, si ha escollit alguna de les províncies, cal mostrar el nom i el codi en les caixes de text que no són editables</p>
+       <form>
+            <fieldset>
+                <legend>Codi postal de Província</legend>
+                Escollir una província: <select id='provincies'>
+                </select>
+                <br>
+                El codi postal de la provincia és: <input type='text' id='codiProv' readonly disabled><br>
+                La província és: <input type='text' id='nomProv' readonly disabled><br>
+                <input type='button' value='Mostrar dades' id='boto'>
+            </fieldset>
+       </form>
+       <h2>EXERCICI 2</h2>
+       <p>Generar una taula amb les dades de les províncies i els seus codis. Ordenada per nom de provincia. La variable original no es vol modificar, és a dir, el Select no es vol ordenat, sinó en l'ordre original que proporciona l'arxiu.</p>
+       <p>
+       <input type='button' value='Ordenar per codi' id='ordCodi'>
+       <input type='button' value='Ordenar per Nom' id='ordNom'><br>
+       Marca si el vol en ordre DEScendent: <input type='checkbox' id='ordType'>
+       </p>
+       <p>Programar els dos botons perquè repintin la taula segons l'ordre escollit</p>
+       <p id='ex2'>
+       </p>
+         <h2>EXERCICI 3</h2>
+       <p>Crear un nou mètode per la classe String. El seu objectiu és: donada una cadena, retornar-ne una altra de nova idèntica a la invocadora, però si té alguna lletra amb accent, la substituirà per la mateixa lletra sense accent.</p>
+       <p>Fer servir el mètode en l'exercici 2 per tal que es treballi amb la variable prov, però amb un nou camp que tingui els nm sense accents.</p>
+</body>
+</html>

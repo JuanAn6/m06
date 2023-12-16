@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>APUNTS</title>
+	 <style>
+		body {
+		text-align: left;
+		font-family: "Helvetica", "Arial Black", "Impact", "Lucida Sans Unicode", "Tahoma", "Verdana", "Lucida Console";
+		font-size: medium;
+		background-color: #FBF0CC;
+		}
+		kbd{
+		font-size: large;
+		color: blue;
+		}
+    </style>
+	<script type='text/javascript' language='javascript' src='./uf1_nf2_Apunts2.js'></script>
+  </head> 
+  <body>
+  <noscript>
+		Eps!!! el teu navegador no soporta JS
+  </noscript>
+  <h1>mòdul 6: Desenvolupament Web en entorn Client</h1>
+  <h2>Continguts</h2>
+  <ol>
+	<li>Identificació i aplicació  dels objectes predefinits del llenguatge<br>Utilització d’objectes. Objectes nadius del llenguatge.</li>
+	<ol>
+		<li><a href="#p1">Date.</a></li>
+		<li><a href="#p2">Math.</a></li>
+		<li><a href="#p3">Number. </a></li>
+		<li><a href="#p4">String.</a></li>
+		<li><a href="#p5">Array.</a></li>
+		<li><a href="#p6">RegExp.</a></li>
+	</ol>
+  </ol>
+
+   <h2>Classificació d’objectes</h2>
+   <ul>
+   <li>Objectes definits per l’usuari: els defineix i els crea el programador.</li><li>
+       Objectes natius de JS: (o predefinits)
+       <ol type='a'>
+            <li>Objectes associats al tipus de dades primàries: String, Number, Boolean</li><li>
+            Objectes associats a tipus de dades compostes: Array, Objecte</li><li>
+            Objectes que proporcionen utilitats: Date, Math, RegExp</li>
+       </ol>
+    </li><li>
+    Objectes del navegador: BOM(Browser Object Model). Permeten manipular les finestres i interaccionar amb l’usuari, els més destacats:
+    <ol type='a'>
+            <li>Window</li><li>
+            Navigator</li>
+     </ol>
+     No són estàndards
+    </li><li>
+	Objectes del document: DOM(Document Object Model). Defineixen l’estructura de la interfície de la pàgina HTML. El W3C ha dut a terme una especificació estàndard del DOM
+        </ul>
+  <h2 id='p1'>Date</h2>
+  <p>
+	<p>Els objectes Date una vegada creats no canvien, el seu valor és estàtic. Nomes es pot modificar mitjançant els mètodes de la classe Date (setter’s)</p>
+
+    <p>Les dates en JS es calculen en mil•lisegons a partir de l’1 de Gener de 1970 a les 00:00 seguint el Coordinated Universal Time (UTC, en català Temps Universal Coordinat) i substituint al GMT l’any 1972(més info a https://ca.wikipedia.org/wiki/GMT)</p>
+    <p>
+    Més info a: <a href='https://copradar.com/utctime/'>https://copradar.com/utctime/</a>
+    
+    Ajuda: <a href='https://es.javascript.info/date'>https://es.javascript.info/date</a>
+    </p>
+
+  </p>
+  <h2 id='p2'>Math</h2>
+  <p>
+	Ajuda: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math'>https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math</a>
+    <br><br>Alguns del mètodes més útils<br>
+	<pre><code>
+        let potencia = Math.pow(base,exponent)
+        let gran = Math.ceil(num): Retorna el valor immediatament posterior/més gran a num. <br>
+            Exemple: (Math.ceil(7.0003) --> 8)
+        let petit = Math.floor(numero): Retorna el valor immediatament anterior/més petit a numero. Exemple: (Math.floor(7.99) --> 7)
+        let num = Math.random(): Retorna un número aleatori entre 0(inclòs) i 1(exclòs) (un valor real, amb molts decimals). 
+	</code></pre>
+	<p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+	
+  </p>
+	
+  <h2 id='p3'>Number</h2>
+  <p>
+	A JavaScript, a diferència d’altres llenguatges de programació, només hi ha un tipus de dades per als números. Tots els números es guarden en memòria amb una resolució de 64 bits (doble precisió) i coma flotant
+    <br>
+    Alguns mètodes utils de Number que es poden fer servir sense indicar la classe Number:
+    <pre><code>
+        parseFloat(valor);
+        parseInt(valor);
+        valor.toFixed(digits);
+        isNaN(valor)
+        isInteger(valor)
+    </code></pre>
+	<p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+    
+    
+  </p>
+  <h2 id='p4'>String</h2>
+  <p>
+	Més info a: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String'>https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String</a><br>
+	Ajuda: <a href='https://flaviocopes.com/javascript-string/'>https://flaviocopes.com/javascript-string/</a><br>
+    La propietat cadena.length permet saber la longitud de la cadena de text.	<br>
+	En general, quan s'aplica un mètode sobre una cadena no es modifica la cadena original, sinó queretornen alguna cosa, una cadena transformada o bé un valor.<br>
+    Per accedir a les posicions d’un String es pot fer de dues maneres:<br>
+    <pre>
+        [], com si fos un array 
+        amb el mètode .charAt(index)
+    </pre>
+    El problema és que aquesta notació només dóna accés per llegir, no per modificar, doncs un String és immutable<br>
+    Si s’intenta modificar un string no es produeix cap tipus de Warming o Error per part del navegador.<br>
+    <br>
+    Això vol dir que el millor que es pot fer és crear una funció per poder modificar el contingut d’un string.
+
+    <u>Exemple d'alguns mètodes</u>
+    <ul>
+    <li>
+    <code>str = r.replace(substr,noustr) </code><br>
+    s’utilitza per a reemplaçar la cadena substr per la cadena noustr. <br>
+    També pot substituir un sol caràcter, però només per la primera aparició. <br>
+    Es pot indicar una expressió regular(en el 1r paràmetre). <br>
+    Els dos paràmetres poden tenir diferent longitud. <br>
+    Si s’indica una expressió regular amb el modificador /g es pot reemplaçar totes les aparicions a la vegada.<br>
+    <a href='https://flaviocopes.com/how-to-replace-all-occurrences-string-javascript/'>Exemple</a> 
+    </li><li>
+    <code>array = str.split(separador,num) </code><br>
+    Permet convertir un String a un Array<br>
+    S’utilitza per a crear un array de cadenes a partir d’un string utilitzant un caràcter com a separador de la cadena original. El paràmetre opcional num és per indicar la quantitat de porcions que es volen. 
+    </li><li>
+    <code>str = substring(inici,fi)</code><br> Retorna la subcadena que comença a la posició inici i acaba a la posició fi. El 2n paràmetre és opcional.<br>
+     Exemples:
+     <ul><li>
+      cadena.substring(0,1)  es queda amb l’element de la primera posició</li><li>
+      cadena.substring(1,2)  es queda amb l’element de la segona posició</li><li>
+      cadena.substring(0,4)  es queda amb els quatre primers elements (sense incloure el de la posició 4)</li>
+    </ul>
+    </li></ul>
+
+    
+    <p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+    
+  </p>
+  <h2 id='p5'>Array</h2>
+  <p>
+    Més info a: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array'>https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array</a><br>
+  </p>
+  <p>L'operador "spread operator" també permet agilitzar l'ús d'arrays en situacions concretes: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax'>sintaxi</a></p>
+  <p><kbd>Visitar el codi JS per veure exemple d'aplicació</kbd></p>
+  <h2 id='p6'>RegExp</h2>
+  <p>
+  Les expressions regulars permeten crear patrons a cercar, substituir, comptar, etc.<br>
+  Més info a:<a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions'>https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions</a>
+  <br>
+  Exemple d'un parell de mètodes que es poden aplicar sobre Strings:
+  <ul><li>
+  <code>arrayNou = str.match(expressióRegular)</code>  <br>
+
+    retorna les coincidències dins la cadena str segons una expressió regular.  <br>
+    Exemple d’expressió regular: <code>/ain/gi</code> <br>
+    Significat: cercar la cadena ain en str <br>
+    g = global, a tota la cadena, totes les coincidències <br>
+    i = indiferent si és majúscules o minúscules <br>
+  </li><li>
+  <code>posició = str.search(lletra/cadena/ExpressióRegular)</code> <br>
+  cerca la 1a ocurrència d’una cadena o expressió regular i retorna la posició on l’ha trobat. És equivalent a str.indexOf(cad,0)
+  </li></ul>
+  
+  </p>
+    
+  <h2>ALGUNES OBSERVACIONS SOBRE HTML</h2>
+  <h4>L'etiqueta input type="submit"</h4>
+  <p>No s'ha de treballar a menys que s'utilitzi el servidor web. Si es treballa en local no s'ha de fer us del submit</p>
+   
+   <h4>Diferències sobre les etiquetes: <code>&lt;input type='button'&gt;</code> vs. <code>&lt;button&gt;&lt;/button&gt;</code></h4>
+            
+   Els botons creats amb l'etiqueta <code>&lt;button&gt;&lt;/button&gt;</code> són iguals que els botons creats amb l'etiqueta <code>&lt;input type='button'&gt;</code>, però ofereixen possibilitats de representació més rics. L'element BUTTON pot tenir contingut. Per exemple, una imatge, i fins i tot amb algun efecte, cosa que el INPUT no permet.
+
+    A part, a nivell de sintaxi l’etiqueta button sempre ha d’anar acompanyada de la seva corresponent etiqueta de tancament, en canvi un input no té etiqueta de tancament.
+  </p>
+    <form>
+    <fieldset>
+      <legend>FORMULARI: ENTRADA DE DADES</legend>
+          Indica el teu nom:
+          <input type='text' id='nom' name='nom'><br>
+          Indica el teva edat:
+          <input type='text' id='edat' name='edat'><br>
+          <input type='button' id='boto' value='FELICITAR'>
+          <input type='submit'>
+    </fieldset>
+    </form>
+    <p id='para'></p>
+  </body>
+</html>

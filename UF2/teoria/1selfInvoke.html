@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>    
+    UF 2 - FUNCIONS
+    </title>   
+    <script language="javascript" src='./1selfInvoke.js'>        </script>
+    </head>
+<body>
+    <h1>UF 2 - FUNCIONS</h1>
+    <h2>CRIDA / INVOCAR UNA FUNCIÓ</h2>
+    <p>Per cridar una funció es posa el seu nom en qualsevol part del programa. Si la funció reclama arguments, s’hauran d’omplir amb valors: constants o variables.<br>
+    Exemples:<br>
+            <pre>
+                <code>
+                    funcio1();
+                    funcio2(arg1,arg2,"valor literal",2);
+                </code>
+            </pre>
+    Si les funcions retornen valors, aquests es poden recollir amb l'ús d'una variable:<br>
+            <pre>
+                <code>
+                    let resultat = funcio1(arguments);
+                </code>
+            </pre>
+    </p>
+    <p>Si cal cridar més d’una funció al mateix temps, des del codi HTML es pot fer així:
+            <pre>
+                <code>
+                    &lt;body onload='lletres(),canviar_epigrama()'&gt;
+                </code>
+            </pre>
+       Però cal evitar incloure en el codi HTML codi JS. Per tant:
+            <pre>
+                <code>
+                    document.addEventListener('DOMContentloaded',function () {
+                        lletres(); canviar_epigrama();
+                    });
+                </code>
+            </pre>
+    
+    </p>
+    <h2>TIPUS DE FUNCIONS: 1. FUNCIONS AUTOEXECUTABLES (SELF-INVOKING)</h2>
+    <p>Aquestes funcions s'executen una vegada són llegides i no es poden invocar en cap més lloc, siguin o no anònimes:
+            <pre>
+                <code>
+                    (function funcioAuto() {
+                        // instruccions;
+                    })();
+                </code>
+            </pre>
+            alternativament, amb notació arrow:
+            <pre>
+                <code>
+                    ( () => {
+                        // instruccions;
+                    })();
+                </code>
+            </pre>
+            alternativament, amb notació ;! enlloc de ()
+            <pre>
+                <code>
+                    ;!function () {
+                        // instruccions;
+                    } ();
+                </code>
+            </pre>
+     Els parèntesis del final indiquen a JavaScript que ha d’executar la funció un cop llegida. I també serveixen per passar paràmetres.
+     <br>OBSERVACIÓ: Aquest tipus de funció s'executa en el moment que es llegeix l'arxiu .js on estan ubicades. Per tant, pot ser abans o després que el codi HTML hagi estat carregat, tot depenen d'on s'inclogui el codi js.</p>
+    
+    Obre la consola
+</body>
+</html>

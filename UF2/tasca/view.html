@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+    Exercicis Mètodes Arrays
+    </title>   
+     <style>
+    table, td, th {
+      border: 1px solid black;
+    }
+    td {
+          font-family: "Courier New";
+    }
+    table {
+      border-collapse: collapse;
+    }
+    body {
+      font-size:30px;
+      font-family:arial;
+    }
+    h2 {
+        border-bottom-color:#3baea0;
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+        background-color:#93e4c1;
+    }
+    code {
+      background-color:bisque;
+      color:#ff5722;
+    }
+    pre {
+      background-color:azure;
+      color: midnightblue;
+    }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h2>EXERCICI</h2>
+    A partir de l'array facilitat, donar resposta a les següents consultes, fent us dels mètodes adients explicats més avall.
+    Ubicar les respostes en les etiquetes amb id='pXXX' on XXX va de 1 fins a 14.
+    <table>
+      <tr><th>CONSULTA</th><th>RESPOSTA</th></tr>
+      <tr><td>Tots els elements de l'array tenen una longitud superior a 3 caràcters?</td><td id="p1"></td></tr>
+      <tr><td>Tots els elements de l'array en posicions parells, tenen una longitud superior o igual a 3 caràcters?</td><td id="p2"></td></tr>
+      <tr><td>Existeix algun element de l'array que té el caràcter 'a' en segona posició?</td><td id="p3"></td></tr>
+      <tr><td>Existeix algun element de l'array que té la particula "ez"?</td><td id="p4"></td></tr>
+      <tr><td>Quins elements tenen una lletra 'a' en segona posició?</td><td id="p5"></td></tr>
+      <tr><td>Quin és el 1r element que té el caràcter 'l' i una longitud menor o igual a 6?</td><td id="p6"></td></tr>
+      <tr><td>Quins elements tenen la partícula "ia"?</td><td id="p7"></td></tr>
+      <tr><td>Quina és el 1ra posició de l'element que té la particula "ia" en posicions múltiples de 3?</td><td id="p8"></td></tr>
+      <tr><td>Llistat "ul" de tots els elements de l'array, però els que tenen una longitud de 5 o menys caràcters mostrar-los en negreta</td><td id="p9"></td></tr>
+      <tr><td colspan="2" style="background-color:azure ;text-align:center"><b>REPÀS</b></td></tr>
+      <tr><td>Mostrar tots els elements de l'array com una cadena, però cada element ha d'estar separat de l'altre amb la partícula "=="</td><td id="p10"></td></tr>
+      <tr><td>Mostrar la comanda per afegir l'element "ÚLTIM" al final de l'array i el valor que retorna la comanda.</td><td id="p11"></td></tr>
+      <tr><td>Mostrar la comanda per afegir l'element "PRIMER" al principi de l'array i el valor que retorna la comanda.</td><td id="p12"></td></tr>
+      <tr><td>Mostrar la comanda per esborrar l'element l'últim element de l'array i el valor que retorna la comanda.</td><td id="p13"></td></tr>
+      <tr><td>Mostrar la comanda per esborrar el primer element de l'array i el valor que retorna la comanda.</td><td id="p14"></td></tr>
+    </table>
+    <h1>MÈTODES que tenen com a paràmetre una funció</h1>
+    <p>Els paràmetre que es poden fer servir en la funció són:<br>
+    <pre> funció_interna (element , posició , array)</pre>
+    On tots els paràmetres són opcionals.</p>
+    <h2>LLISTAT DE MÈTODES MÉS RELLEVANTS</h2>
+    <p>
+    	  <pre>Array.every(funció_interna);</pre>
+        Valor retornat:
+        <ul>
+          <li><code>true</code>: si tots els elements de l'array compleixen que l'execució de la funció retorna true.</li>
+          <li><code>false</code>: en cas contrari</li>
+        </ul>
+        Observació: el recorregut per l'array s'atura en trobar el 1r false.
+    </p>
+    <p>
+      <pre>Array.some(funció_interna);</pre>
+      Valor retornat:
+      <ul>
+        <li><code>true</code>: si algún dels elements de l'array compleixen que l'execució de la funció retorna true.</li>
+        <li><code>false</code>: en cas contrari</li>
+      </ul>
+  </p>
+  <p>
+    <pre>Array.filter(funció_interna);</pre>
+    Valor retornat:
+    <ul>
+      <li><code>Un nou array</code>: amb els elements de l'array compleixen que l'execució de la funció retorna true.</li>
+    </ul>
+</p>
+<p>
+  <pre>Array.forEach(funció_interna);</pre>
+  Valor retornat:
+  <ul>
+    <li><code>Res</code>: permet fer un recorregut complet per l'array.</li>
+  </ul>
+</p>
+<p>
+  <pre>Array.map(funció_interna);</pre>
+  Valor retornat:
+  <ul>
+    <li><code>Un nou array de la mateixa dimensió que l'original</code>: però només hi ha valors en les posicions on l'execució de la funció retorna "quelcom".</li>
+  </ul>
+</p>
+<p>
+  <pre>Array.find(funció_interna);</pre>
+  Valor retornat:
+  <ul>
+    <li><code>el 1r element de l'array que</code>: en l'execució de la funció retorna <code>true</code>.</li>
+    <li><code>-1</code>: en cas que no hi ha cap element que en l'execució de la funció retorni <code>true</code>.</li>
+  </ul>
+</p>
+<p>
+  <pre>Array.findIndex(funció_interna);</pre>
+  Valor retornat:
+  <ul>
+    <li><code>la posició del 1r element de l'array que</code>: en l'execució de la funció retorna <code>true</code>.</li>
+    <li><code>-1</code>: en cas que no hi ha cap element que en l'execució de la funció retorni <code>true</code>.</li>
+  </ul>
+</p>
+<h2>Altres MÈTODES de la classe Array</h2>
+
+</body>
+</html>

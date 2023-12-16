@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <title>TIPUS DE QUADRES DE DIÀLEG</title>
+    <script type='text/javascript'>
+        window.alert('Benvinguts a la pàgina web');
+        let valor = window.prompt('Indicar un valor','12');
+        let resposta = window.confirm('El valor indicat era '+valor+' ?')
+    </script>
+  </head> 
+  <body>
+  <h1>Els 3 quadres de diàleg</h1>
+  <ol>
+  <li>ALERT</li>
+  <li>PROMPT
+    <ul>
+      <li>Retorna un string.</li>
+      <li>Quan l'usuari fa clic al botó "Acceptar", es retornarà el text introduït al camp d'entrada.</li>
+      <li>Si l'usuari fa clic a "Acceptar" sense introduir cap text, es retornarà una cadena buida. </li>
+      <li>Si l'usuari fa clic al botó "Cancel·la", aquesta funció retorna <i>nul</i>.</li>
+    </ul>
+  </li>
+  <li>CONFIRM
+    <ul>
+      <li>Retorna un <i><b>true</b></i> o <i><b>false</b></i></li>
+    </ul>
+  </li>
+  </ol>
+  <p id='resposta'></p>
+  <script>
+      let sortida = document.getElementById('resposta');
+      // aquestes instruccions podrien estar en l'altre bloc <script>??? Perquè?
+      //No, perque no estara carregat el document. Per que si pogues estar es podria carregar primer el document y despres fer una fucio que s'executes després;
+      if (resposta)
+        sortida.innerHTML = 'S\'ha premut acceptar';
+      else
+        sortida.innerHTML = 'S\'ha premut cancel·lar';
+       
+      sortida.innerHTML = resposta ? 'S\'ha premut acceptar':'S\'ha premut cancel·lar';
+
+      // diferència entre innerHTML i value i textContent 
+      // innerHTML permet insertar text amb fomrat, value es el valor que prendra la variable o punter i text Content contindra string per representar texte;
+  </script>
+  </body>
+</html>

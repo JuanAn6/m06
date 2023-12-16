@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Ester Marsal Roca" lang="es">
+    <title>
+    UF 2  - Creant prototipus
+    </title>   
+</head>
+<body>
+    
+    <h2>CREAR NOUS MÈTODES</h2>
+    <h2>Classe.prototype</h2>
+    <p>
+       La propietat PROTOTYPE permet crear mètodes nous d’un tipus d’objecte existent (Array, String, Date, Number ...).<br>
+       Observar la consola F12, allà es poden veure els nous mètodes següents:
+       <dl>
+            <dt>Mètode segon</dt>
+                <dd>retorna el valor que hi ha a la posició 2.</dd>
+            <dt>Mètode ucase</dt>
+                <dd>transforma l'array que invoca el mètode, totes les posicions que siguin String, les transforma a Majúscula.</dd>
+            <dt>Mètode lcase</dt>
+                <dd>retorna un nou array, idèntic al que ha invocat el mètode, però totes les posicions String ara estaran en minúscules.</dd>
+       </dl>
+        És molt important que els noms del mètodes creats amb la propietat prototype no siguin noms de mètodes ja existents per l’objecte Array, 
+        per exemple crear un nou mètode que es digui join, perquè sinó es sobreescriu el mètode original i queda anul•lat, no podent-lo fer servir.
+    </p>
+    
+    <div id='segon'></div>
+    <div id='ucase'></div>
+    <div id='ord'></div>
+    <script type="text/javascript" language="javascript">
+    
+        Array.prototype.segon = function ()
+        {
+            if (this[2] == undefined) return -1;
+            return this[2];
+        }
+        /*---------------------------------------------------------------*/
+// COMPTE! js deixa modificar mètodes ja existents, com en aquest codi "join" però llavors es perd la funcionalitat original del mètode
+            if (!Array.prototype.join) {
+                    Array.prototype.join = function ()
+                    {
+                      return this[2];
+                    }
+            }
+        /*---------------------------------------------------------------*/
+        Array.prototype.ucase = function ()
+         {  // Crear un nou mètode anomenat ucase pels objectes Array
+          for (i=0;i<this.length;i++)
+            {
+              this[i] = this[i].toUpperCase();
+            }
+          //return this;
+         }
+        /*---------------------------------------------------------------*/
+        Array.prototype.lcase = function ()
+         {  
+         let minus = [];
+          for (i=0;i<this.length;i++)
+            {
+              minus.push(this[i].toLowerCase());
+            }
+          return minus;
+         }/*---------------------------------------------------------------*/
+        let a = new Array("Primer element","Segon element","Tercer element","Quart element"); 
+        let alt = ['hola','adeu'];
+         console.info(a.toString());
+         document.getElementById('segon').textContent = "Exemple d'ús d'un nou mètode personalitzat: "+a.segon()+" "+alt.segon();
+         document.getElementById('ucase').textContent = "Exemple d'ús d'un nou mètode personalitzat: "+a.lcase();
+         console.info("S'ha modificat l'array a minúscula: ",a.toString()); // compte! el mètode lcase no modifica el contingut de l'objecte que invoca el mètode, sinó que retorna un nou objecte amb el contingut modificat de l'objecte que ha invocat el mètode
+         a.ucase(); // en canvi ucase si que modifica el propi objecte
+         document.getElementById('ord').textContent = "Array ordenat alfabèticament: "+a.sort();
+
+         console.info(a.join(' -- '));
+         console.info(a.lcase());
+         console.info(a.ucase());
+         console.info(a.join(' -- '));
+         
+    </script>
+</body>
+</html> 

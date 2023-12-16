@@ -1,0 +1,64 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Creation of array object in javascript using JSON</title>
+   </head>
+	
+   <body>
+   </body>
+
+      <script language = "javascript" >
+         
+         let text = "<h2>JSON array object</h2>";
+
+         let books = { Pascal : [ 
+                                { Name  : "Pascal Made Simple", price : 700 },
+                                { Name  : "Guide to Pascal", price : 400 }
+                                ],  
+                            
+                       Scala  : [
+                               { Name  : "Scala for the Impatient", price : 1000 }, 
+                               { Name  : "Scala in Depth", price : 1300 }
+                               ]    
+                     }    
+/*
+És igual de vàlid els noms dels atributs entre "" que no
+         let books = { "Pascal" : [ 
+            { "Name"  : "Pascal Made Simple", "price" : 700 },
+            { "Name"  : "Guide to Pascal", "price" : 400 }],  
+				
+            "Scala"  : [
+               { "Name"  : "Scala for the Impatient", "price" : 1000 }, 
+               { "Name"  : "Scala in Depth", "price" : 1300 }]    
+         }    
+*/
+
+         
+         let i = 0
+         text += "<table border = '2'><tr>";
+         // titols
+         text += "<th>Name</th><th>Price</th></tr>";
+         
+         books.Pascal.forEach(function (v)
+         {
+            text += ("<tr><td width = 150>" + v.Name+"</td>");
+            text += ("<td width = 50>" + v.price +"</td></tr>");
+         });
+         
+         
+         /*for(i  in books.Pascal){	// equivalent a          for(i = 0;i<books.Pascal.length;i++){	
+            text += ("<tr><td width = 150>" + books.Pascal[i].Name+"</td>");
+            text += ("<td width = 50>" + books.Pascal[i].price +"</td></tr>");
+         }*/
+
+         for(i  in books.Scala){ // equivalent a        for(i = 0;i<books.Scala.length;i++){
+            text += ("<tr><td width = 150>" + books.Scala[i].Name+"</td>");
+            text += ("<td width = 50>" + books.Scala[i].price+"</td></tr>");
+         }
+         
+
+			
+         text += ("</tr></table>");
+         document.body.innerHTML = text;
+      </script>	
+</html>

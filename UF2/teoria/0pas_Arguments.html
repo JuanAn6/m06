@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Ester Marsal Roca">
+        <title>
+        UF 2 - FUNCIONS - EXEMPLE PAS D'ARGUMENTS
+        </title>   
+        <script src='./0pas_arguments.js'></script>
+  </head>
+  <body>
+        <h1>UF 2 - FUNCIONS</h1>
+            <p><a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Funciones' target='_blank'>Documentació MDN sobre funcions</a><br>
+            Habitualment tenen un nom (encara que en JavaScript això és opcional) i es poden cridar (si tenen nom) en qualsevol lloc del codi JS.<br>
+            Les funcions poden o no retornar valors a l’element que l’ha cridat, amb la paraula clau <b>return</b>.<br>
+            Els valors retornats, com es veurà més endavant, poden ser funcions o variables que continguin funcions.
+            </p>
+        <h2>DECLARACIÓ DE FUNCIONS</h2>
+        <p>La manera més normal de declarar una funció:
+            <pre>
+                <code>
+                    <i>function</i> funcio1()
+                    {
+                        <i>// instruccions a executar</i>
+                        <i>return</i> valor_a_retornar; <i>// si cal retornar quelcom</i>
+                    }
+                </code>
+            </pre>
+        </p>
+        <p>Es poden passar arguments entre parèntesis, però també hi ha altres maneres que es veuran tot seguit.
+            <pre>
+                <code>
+                    <i>function</i> funcio2( argument1, argument2, ...)
+                    {
+                        <i>// instruccions a executar</i>
+                        <i>// ús dels arguments que es passen</i>
+                        <i>return</i> valor_a_retornar; <i>// si cal retornar quelcom</i>
+                    }
+                </code>
+            </pre>
+        </p>
+        <h2>NOM DE LES FUNCIONS</h2>
+        <p>És adequat que les funcions tinguin de nom una estructura semblant a les següents propostes:
+            <pre>
+                    f_nom
+                    fNom
+                    func_nom
+                    funNom
+            </pre>
+            per tal d’evitar confusions amb noms d’altres elements de la web: noms de variables, noms d’atributs d’etiquetes,....
+        </p>
+        <h2>PAS DE PARÀMETRES</h2>
+        <p>Tipus de pas de paràmetres en funcions:
+             <ul>
+                <li><b>Per valor:</b> implica que si es passa una variable, els seus canvis només seran coneguts dins la funció. Al retornar al bloc de codi des d'on s'ha executat la funció, les variables continuaran amb els valors que ja tenien abans.</li>
+                <li><b>Per variable/o per referència:</b> implica que si es modifica la variable dins la funció, els canvis són coneguts fora d’aquesta.</li>
+             </ul>
+        </p>
+        <p>Classificació dels tipus de dades en JavaScript:
+            <ol>
+                <li>Variables complexes / Objectes: Array, Date, ... i qualsevol objecte definit per l'usuari.</li>
+                <li>Tipus de dades primitius: Boolean, null, Undefined, Number, String, Symbol.</li>
+            </ol>
+        </p>
+        <p>
+        Els tipus de dades complexes es passen per referència i els primitius per valor.<br>
+        Els paràmetres primitius (com pot ser un número) es passen a les funcions per valor; el valor es passa a la funció, però si la funció canvia el valor del paràmetre, aquest canvi no es reflexa globalment o en una altra crida a la funció.<br>
+        Si es passa un objecte (p. ex. un valor no primitiu, com un Array o un objecte definit per l’usuari) com a paràmetre, i la funció canvia les propietats de l’objecte, aquest canvi és visible des de fora de la funció.
+		<br>
+		<a href='https://flaviocopes.com/javascript-value-reference/'>Exemple en anglès</a>
+        </p>
+        <h2>RECURSIVITAT</h2>
+        <p id='resultat'>
+        Igual que altres llenguatges de programació, JS permet fer crides recursives a funcions.
+            <pre>
+                <code>
+                    <i>function</i> <b>f_recursiva</b>(x)
+                    {
+                        if (x == 1) return x;
+                        else
+                            return x*<b>f_recursiva</b>(x-1);
+                    }
+                </code>
+            </pre>
+
+        </p>
+        <p>Mirar consola de desenvolupador</p>
+  </body>
+</html>
+
+

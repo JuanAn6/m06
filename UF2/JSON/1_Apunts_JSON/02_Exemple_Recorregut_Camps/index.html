@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="Author" content="Ester Marsal Roca">
+        <title>JSON - javascript object notation</title>   
+        <script src='./script.js'></script>
+    </head>
+    <body>
+        <h1>Recorregut pels camps d'un objecte JSON</h1>
+        <h3>Suposem el següent objecte:</h3>
+        <pre>
+        const items = {
+              'first': new Date(),
+              'second': 2,
+              'third': 'test'
+            }
+            </pre>
+        <h2>Object.keys(objecte)</h2>
+        <p>Retorna un array amb els noms dels camps de l'objecte JSON. <br>
+        </p>
+        <pre>
+            Object.keys(items) = ["first", "second", "third"];
+        </pre>
+        <pre id='camps'></pre>
+        <h2>Object.entries(objecte)</h2>
+        <p>Retorna un array, on cada posició és un array de 2 posicions:<br>
+        En la primera posició hi ha el nom del camp i en la segona el valor.
+        </p>
+        <pre>
+            Object.entries(items) = [["first", Thu Nov 21 2019 18:30:26 GMT+0100 (Hora estàndard del Centre d’Europa)],
+                                     ["second", 2],
+                                     ["third", "test"]
+                                    ]
+        </pre>
+        <pre id='campsIvalors'></pre>
+		<p><a href='https://flaviocopes.com/javascript-access-object-property/'>Més exemples</a></p>
+        <h2>Object.values(objecte)</h2>
+        <p>Retorna els valors de l'objecte JSON en un array
+        </p>
+        <pre>
+            Object.values(items) = [Thu Nov 21 2019 18:30:26 GMT+0100 (Hora estàndard del Centre d’Europa),
+                                    2,
+                                    "test"
+                                    ]
+        </pre>
+        <pre id='valors'></pre>
+
+
+        
+        <h2>Bucles que es poden utilitzar</h2>
+        <p>Aquests dos mètodes keys i entries permeten poder iterar per dins els camps d'un objecte JSON.
+        <br>
+        <pre>
+            forEach
+            for ( ... of....)
+        </pre>
+        </p>
+    </body>
+</html>

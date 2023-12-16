@@ -1,0 +1,1 @@
+array.splice(x, i) //elimina desde x fins a i;

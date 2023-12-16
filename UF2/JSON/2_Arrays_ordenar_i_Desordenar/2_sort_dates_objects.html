@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ordenar Array de JSON's</title>
+    </head>
+    <body>
+        <h1>Ordenar Array de JSON's x camp de tipus Date</h1>
+        <p>Suposar l'array "activities" amb el camp "date" que conté objectes de tipus Date que es volen ordenar. La primera crida a sort és vàlida, però tant "activities" com "sortedActivities" queden ordenades pel camp "date". Amb la segona opció, fent ús del mètode slice s'aconsegueix que l'array original no acabi també ordenat.</p>
+        <code>
+            <pre>        
+            const activities = [
+              { title: 'Hiking', date: new Date(anyActual+'-06-28') },
+              { title: 'Shopping', date: new Date(anyActual+'-06-10') },
+              { title: 'Trekking', date: new Date(anyActual+'-06-22') }
+            ]
+            </pre><pre>
+            const sortedActivities = activities.sort((a, b) => b.date - a.date)
+            </pre>
+            <pre>
+            const sortedActivities = activities.slice().sort((a, b) => b.date - a.date)
+            </pre>
+        </code>
+        <script>
+			const anyActual = new Date().getFullYear();
+            const activities = [
+              { title: 'Hiking', date: new Date(anyActual+'-06-28') },
+              { title: 'Shopping', date: new Date(anyActual+'-06-10') },
+              { title: 'Trekking', date: new Date(anyActual+'-06-22') }
+            ]
+            console.info(activities.toString());
+            console.info(JSON.stringify(activities));
+            const sortedActivities = activities.slice().sort((a, b) => a.date - b.date)
+            console.info(sortedActivities);
+        </script>
+		Exercici: Millorar les funcions ordenarAsc i ordenarDesc perquè puguin ordenar per camps de tipus Date. I provar-les amb la variable JSON que hi ha dins l'arxiu persones.json facilitat, mostrant l'array de persones ordenat pel camp dataNaix de manera creixent i decreixent.
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>WEB STORAGE</title>
+    <script>
+        localStorage.setItem('CICLE CURS','DAW2');
+        localStorage.setItem('QUANTITAT',23);
+        console.info(localStorage.getItem('nomZ'));
+		console.info(localStorage.getItem('QUANTITAT'),' ',typeof localStorage.getItem('QUANTITAT'));
+    </script>
+  </head> 
+  <body>
+    <h1>WEB STORAGE</h1>
+        <p>Web Storage apareix amb HTML5 i es presenta com a alternativa a les galetes
+        (cookies) per a emmagatzemar informació de les pàgines web en el costat del
+        client.</p> 
+
+        <p>A diferència de les galetes que només permeten emmagatzemar fins a 4
+        kB d'informació, amb Web Storage podem emmagatzemar fins a 5 MB. Aquesta
+        capacitat la defineix el navegador, de manera que depenent del navegador que
+        utilitzem aquesta capacitat pot ser més gran.</p>
+
+        <p>A diferència de les galetes, les dades emmagatzemades amb Web Storage no
+        s'envien automàticament al servidor. Això redueix el pes de cada petició al
+        servidor; per aquest mateix motiu, només es pot accedir a la informació emmagatzemada
+        des de la part del client, és a dir, no hi ha un mecanisme per a
+        accedir-hi directament des d'un llenguatge de programació del costat del servidor
+        com podria ser PHP.</p>
+
+        <p>Hi ha dos tipus d'emmagatzematge: localStorage i sessionStorage. La diferència
+        entre tots dos és que el primer conserva la informació permanentment fins
+        que es netegi la memòria cau (cache) del navegador, mentre que en el segon la
+        informació es manté fins que es tanca la sessió o, el que és el mateix, fins que
+        es tanca la pestanya que conté el nostre web.</p>
+        <p>
+		<p><a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage' target='_blank'>Més informació en Anglès</a></p>
+        La manera d'arxivar i accedir a les dades és igual en tots dos casos:
+            <pre>
+                localStorage
+                sessionStorage
+            </pre>
+        , així que s'explica tot fent us de <code>localStorage</code>.</p>
+        <p>Es pot saber si el navegador de l'usuari és compatible amb Web Storage utilitzant
+        el codi següent:
+            <blockquote><pre>
+                    //Es pot utilitzar l'objete localStorage o el sessionStorage
+                if(localStorage){
+                        //Existeix localStorage i se'n pot fer ús per emmagatzematge
+                    alert("El navegador és compatible amb localStorage ");
+                } else {
+                        //No existeix localStorage
+                    alert("El navegador no és compatible amb localStorage ");
+                }
+            </pre></blockquote></p>
+            <table>
+                <tr><td>Visualització des del Chrome --> Application</td><td>Visualització des del Firefox --> Emmagatzematge</td></tr>
+                <tr><td><img src='./Web_Storage_Chrome.png' height="150" width="400"></td><td><img src='./Web_Storage_Mozilla.bmp'  height="120" width="400"></td></tr>
+            </table>
+        <h3>Com desar un valor al Local Storage?</h3>
+            <p>Per a emmagatzemar dades utilitzant Web Storage, cal tenir en compte
+            un parell de coses: les dades només poden ser cadenes de text, i cada dada que
+            emmagatzemem està relacionada amb la clau(=nom) que s'hagi assignat.</p>
+            <p>Hi ha tres maneres diferents d'emmagatzemar un valor:
+            <ol>
+                <li>Inserint el parell clau-valor:
+                    <code>localStorage.setItem('clau','valor');</code></li><li>
+                Inserint un nou element com si localStorage fos una taula associativa:
+                    <code>localStorage['clau'] = 'valor';</code></li><li>
+                Tractant localStorage com un objecte:
+                    <code>localStorage.clau = 'valor';</code></li>
+            </ol></p>
+        <h3>Com recuperar un valor del Local Storage?</h3>
+            <p>
+            De la mateixa manera que teníem tres maneres diferents d’assignar valors,
+            exiteixen tres maneres de recuperar un valor:</p>
+            <ol>
+                <li>Amb el mètode getItem(clau):
+                 <code>valor = localStorage.getItem('clau');</code></li><li>
+                Tractant d'accedir al valor utilitzant la clau com si localStorage fos una 
+                taula associativa:
+                 <code>valor = localStorage['clau'];</code></li><li>
+                Tractant localStorage com un objecte i utilitzant la clau com si en fos una
+                propietat:
+                 <code>valor = localStorage.clau;</code></li>
+            </ol></p>
+        <h3>Com esborrar un valor del Local Storage?</h3>
+            <p>Es poden eliminar valors emmagatzemats utilitzant el mètode removeItem
+            de la manera següent:</p>
+            <code>localStorage.removeItem('clau');</code>
+            <p>Si el que volem és eliminar tots els valors emmagatzemats, es pot fer amb
+            el mètode clear:</p>
+            <code>localStorage.clear();</code>
+        <h3>Altres operacions</h3>
+            <p>
+            Atès que localStorage es comporta com una taula associativa, es poden consultar
+            la quantitat d'elements emmagatzemats de la manera següent:</p>
+            <code>var total = localStorage.length;</code>
+            <p>També es pot obtenir el nom d'una clau determinada usant <code>localStorage.key(i)</code>,
+            en què <code>i</code> és la posició de la clau.</p>
+            <p>Amb aquest mètode es poden recórrer tots els elements emmagatzemats a localStorage. Per exemple, amb aquest codi s'escriuen per consola totes les claus i valors corresponents:</p>
+            <blockquote><pre>
+            for (var i=0; i < localStorage.length; i++) {
+                console.info("La clau "+localStorage.key(i)+" emmagatzem el valor "
+                +localStorage[localStorage.key(i)]);
+                }</pre>
+            </blockquote>
+  </body>
+</html>

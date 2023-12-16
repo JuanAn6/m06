@@ -1,0 +1,7 @@
+let persones = [
+   {nom: 'Alejandra', cognom: 'Quiroga', dataNaix: "Sun Jan 01 1995 01:00:00 GMT+0100"},
+   {nom: 'Jason', cognom: 'Ajax', dataNaix: "Sun Feb 01 1987 01:00:00 GMT+0100"},
+   {nom: 'Mauricio', cognom: 'Katze', dataNaix: "Fri Nov 11 2016 09:00:00 GMT+0100"},
+   {nom: 'José Luis', cognom: 'Rodríguez', dataNaix: "Wed Oct 07 2020 09:00:00 GMT+0200"},
+   {nom: 'Arya', cognom: 'Stark', dataNaix: "Mon Aug 15 2011 21:00:00 GMT+0200"} 
+];
