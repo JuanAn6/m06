@@ -1,0 +1,9 @@
+web storage
+temporizadores
+eventlisteners
+formularios
+trabajo en grupo
+propagation bubble capturing
+
+
+ex 3 2a
