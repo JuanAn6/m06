@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Selectors Exercici</title>
+    <base target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="./selectors.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Titol 1</h1>
+      <h2>Titol 2</h2>
+      <h3>Titol 3</h3>
+      <nav>
+          <a href="#">HTML</a> |
+          <a href="#">CSS</a> |
+          <a href="#">JAVA</a> |
+          <a href="#">PHP</a> |
+          <a href="#">PYTHON</a>
+      </nav>
+    </header>
+    
+    <main class="container">
+       <p>Paràgraf HTML amb enllaç cap a una <abbr title='Uniform Resource Locator'>URL</abbr> amb la definició d'una  <a href='https://aplicacions.llengua.gencat.cat/llc/AppJava/index.html?action=Principal&method=detall&input_cercar=vaticini&numPagina=1&database=DIEC&idFont=60369&idHit=60369&tipusFont=%3CI%3EDiccionari+de+la+llengua+catalana%3C%2FI%3E+de+l%27Institut+d%27Estudis+Catalans+%282a+edici%F3%29&numeroResultat=1&databases_avansada=&categories_avansada=&clickLink=detall&titol=vaticini++&tematica=%28Totes%29&tipusCerca=cerca.tot'>paraula</a> 
+        </p>
+        <p><mark>Selecció d'un únic element del DOM</mark>
+          <table>
+            <tr><th>mètode</th><th>funcionalitat</th></tr>
+            <tr><td><code>.getElementById('id')</code></td><td>Selecció via atribut <code>id</code></td></tr>
+            <tr><td><code>.querySelector('selectorCSS')</code></td><td>Selecció via selector CSS</td></tr>
+          </table>
+        </p>
+        <p><mark>Selecció d'un conjunt d'elements del DOM (col·lecció)</mark>
+          <table>
+            <tr><th>mètode</th><th>funcionalitat</th></tr>
+            <tr><td><code>.getElementsByName('atributName')</code></td><td>retorna una col·lecció HTML "viva", compte al fer el recorregut <sub>let elements = Array.from(nodeList);</sub></td></tr>
+            <tr><td><code>.getElementsByTagName('tagHTML')</code></td><td>retorna una col·lecció HTML "viva"</td></tr>
+            <tr><td><code>.getElementsByClassName('c1 c2 c2')</code></td><td>retorna una col·lecció HTML "viva"</td></tr></td></tr>
+            <tr><td><code>.querySelectorAll('selectorCSS')</code></td><td>Selecció via selector CSS</td></tr>
+          </table>
+          <form>
+            <fieldset>
+				  <legend>
+					etiqueta legend
+				  </legend>
+				  <p>Selecciona com et sents:
+					<p>
+					<label for="molt-pobre">
+					<input type="radio" name="sensació" value="Molt pobre" id="molt-pobre"> Molt pobre
+					</label>
+					<label for="pobre">
+					<input type="radio" name="sensació" value="pobre" id="pobre"> pobre
+					</label>
+					<label for="ok">
+					<input type="radio" name="sensació" value="OK" id="ok"> OK
+					</label>
+					<label for="ric">
+					<input type="radio" name="sensació" value="ric"> ric
+					</label>
+					<label for="molt-ric">
+					<input type="radio" name="sensació" value="Molt ric" id="molt-ric"> Molt ric
+					</label>
+					</p>
+					<p>
+					<button id="boto">Submit</button>
+					</p>
+				  </p>
+				<div>
+					<h3>Tasques a fer:</h3>
+					  Passejar el gos <input type="checkbox" checked> <br>
+					  Alimentar el gos <input type="checkbox" checked> <br>
+					  Netejar el gos <input type="checkbox"><br>
+				</div>
+				<div>
+					<p>Indica una nova contrasenya
+						<label>Contrasenya: <input type="password" name="password" required="" id="id_password1"></label><br>
+						<label>Repetir Contrasenya: <input type="password" name="password" required="" id="id_password2"></label><br>
+					</p>
+				</div>
+			</fieldset>
+          </form>
+        <ol>
+			<li>
+			  HTML5 disposa d'algunes etiquetes interessants de coneixer el seu ús com:
+				<ul>
+				  <li>figure</li>
+				  <li>figurecaption</li>
+				  <li>header</li>
+				  <li>footer</li>
+				  <li>main</li>
+				  <li>mark</li>
+				  <li>nav</li>
+				</ul>
+				<p>Exemple de figure i figurecaption:
+				  <figure>
+					  <img src="imatge.png" alt="aquí hi falta una imatge">
+					  <figcaption>títol de la imatge</figcaption>
+				  </figure>
+				</p>
+			</li>
+			<li>
+			  <abbr title='JavaScript Object Notation'>JSON</abbr>
+			</li>
+			<li><a href="https://www.facebook.com">Anar a facebook</a></li>
+			<li><a href="https://www.youtube.com">Anar a youtube</a></li>
+			<li><a href="https://www.instagram.com">Anar a instagram</a></li>
+		</ol>
+		<div>
+			<p class="hello">I am a paragraph with a class</p>
+			<p id="special">I am a paragraph with an ID</p>
+		</div>
+   </main>
+   <footer>
+      <p>Copyright © 2024 www.informila.info</p>
+      <p>Contact: <a href="mailto:emarsal2@milaifontanals.org">emarsal2@milaifontanals.org</a>
+   </footer>
+  </body>
+</html>
