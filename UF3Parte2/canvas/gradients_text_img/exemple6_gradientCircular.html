@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    Canvas - Gradients Circulars
+    </title>   
+    <script type="text/javascript" language="javascript" src='./exemple6_circular.js'>
+    </script>
+	<style>
+		body {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+		code {
+		  font-family: Consolas,"courier new";
+		  color: crimson;
+		  background-color: #f1f1f1;
+		  padding: 2px;
+		  font-size: 105%;
+		}
+	</style>
+    </head>
+<body>
+    <canvas id="canvas1" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    <canvas id="canvas2" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+	<h1>MÈTODE de l’objecte canvas.getContext</h1>
+	<h2>createRadialGradient()</h2>
+	<p>Crea un degradat circular. Es pot fer servir per omplir rectangles, cercles, línies, text, etcètera.</p>
+	<p>Aquest objecte és pot fer servir com a valor de la propietat strokeStyle o la propietat fillStyle, vistes anteriorment.</p>
+	<p>Es pot fer servir el mètode addColorStop() per indicar diferents colors del degradat i en quina posició situar els colors.</p>
+	<h3>SINTAXÍ</h3>
+	<pre>context.createRadialGradient(x0,y0,r0,x1,y1,r1);</pre>
+	<h4>Paràmetres</h4>
+	<p>
+	x0 	Coordenada x on comença el cercle<br>
+	y0 	Coordenada y on comença el cercle<br>
+	r0 	El radi del cercle de partida<br>
+	x1 	Coordenada x del cercle interminable del pendent<br>
+	y1 	Coordenada y del cercle final del gradient<br>
+	r1 	El radi del cercle final, on acaba el degradat<br>
+	Per tant, r0 sempre haurà de ser més petit que r1.
+	</p>
+
+	<h2>addColorStop()</h2>
+	<p>
+	Especifica el color on s’ha d’aturar el degradat.<br>Aquest mètode s’ha d’utilitzar una vegada s’ha fet servir un dels dos mètodes següents: createLinearGradient() o createRadialGradient(). Si no s’utilitza, el degradat no serà visible. S’ha d’utilitzar com a mínim 2 cops. 
+	</p>
+	<h3>SINTAXÍ</h3>
+	<pre>
+	gradient.addColorStop(stop,color);
+	</pre>
+	<h4>Paràmetres</h4>
+	<p>
+	stop =	valor entre 0.0 i 1.0, representa la posició entre el principi i el final del degradat<br>
+	color =	El valor del color CSS que es mostrarà a la posició indicada en l’stop<br>
+	</p>
+</body>
+</html>

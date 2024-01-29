@@ -64,25 +64,17 @@ function f_main()
 		let info_pass = document.querySelectorAll('input[type="password"]');
 		console.info(info_pass);
 		//14
-		let tex = document.querySelectorAll('input[type="text"]');
+		let tex = document.querySelector('input[type=text]');
 		console.info(tex);
 
 		//15
-		let rad = document.querySelectorAll('input[type="radio"]');
+		let rad = document.querySelector('input[type=radio]');
 		console.info(rad);
 
 		//16
-		let abbrs = document.getElementsByTagName('abbr');
-		console.info(abbrs);
-		let possibles = [];
-		for(let i = 0; i < abbrs.length; i++){
-			if(abbrs[i].getAttribute('title') != null){
-				possibles.push(abbrs[i]);
-			}
-		}
-		console.info(possibles[1]);
-		let ab = document.querySelectorAll('input[title]');
-		console.info(ab);
+		let abbr = document.querySelectorAll('abbr[title]')[1];
+		console.info(abbr);
+
 		//17
 		let lis_ul = document.querySelectorAll('ul>li');
 		console.info(lis_ul[2].textContent);
@@ -112,5 +104,3 @@ function f_main()
    <!-- 18. Seleccionar la segona etiqueta mark. Mostrar el resultat per consola -->
    */
    document.addEventListener('DOMContentLoaded',f_main);
-
-	

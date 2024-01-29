@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    Canvas - Text
+    </title>   
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		code {
+		  font-family: Consolas,"courier new";
+		  color: crimson;
+		  background-color: #f1f1f1;
+		  padding: 2px;
+		  font-size: 105%;
+		}
+	</style>
+</head>
+<body>
+	<h1>Generar imatge a partir del contingut del canvas</h1>
+	<canvas id='canvas'>Eps! El navegador no permet canvas.</canvas>
+	<script>
+	document.addEventListener('DOMContentLoaded',function ()
+	{
+		let c = document.getElementById('canvas');
+		c.setAttribute('width',1000);
+		
+		let ctx = canvas.getContext("2d");
+		ctx.font = 'bold 40pt Menlo'
+		ctx.fillStyle = "green"; // indicar el color del text
+		ctx.fillText('Text dins del canvas', 100, 100)
+		const imgHTML = document.createElement('img');
+		imgHTML.setAttribute('src',c.toDataURL());
+		document.body.appendChild(imgHTML);
+		
+	});
+	</script>
+	</body>
+</html>
+
+

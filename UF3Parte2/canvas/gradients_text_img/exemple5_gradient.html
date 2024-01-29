@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Ester Marsal Roca">
+    <title>
+    Canvas - Gradients
+    </title>   
+    <script type="text/javascript" language="javascript" src='./exemple5.js'>
+    </script>
+	<style>
+		body {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+		code {
+		  font-family: Consolas,"courier new";
+		  color: crimson;
+		  background-color: #f1f1f1;
+		  padding: 2px;
+		  font-size: 105%;
+		}
+	</style>
+    </head>
+<body>
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    <canvas id="canvas2" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+	<h1>MÈTODE de l’objecte canvas.getContext</h1>
+	<h2>createLinearGradient()</h2>
+	<p>Crea un degradat de línia. Es pot fer servir per omplir rectangles, cercles, línies, text, etcètera.</p>
+	<p>Aquest objecte és pot fer servir com a valor de la propietat strokeStyle o la propietat fillStyle, vistes anteriorment.</p>
+	<p>Es pot fer servir el mètode addColorStop() per indicar diferents colors del degradat i en quina posició situar els colors.</p>
+	<h3>SINTAXÍ</h3>
+	<pre>context.createLinearGradient(x0,y0,x1,y1);</pre>
+	<h4>Paràmetres</h4>
+	<p>
+	x0 	Coordenada x on comença el degradat<br>
+	y0 	Coordenada y on comença el degradat<br>
+	x1 	Coordenada x on acaba el degradat<br>
+	y1 	Coordenada y on acaba el degradat<br>
+	</p>
+
+	<h2>addColorStop()</h2>
+	<p>
+	Especifica el color on s’ha d’aturar el degradat.<br>Aquest mètode s’ha d’utilitzar una vegada s’ha fet servir un dels dos mètodes següents: createLinearGradient() o createRadialGradient(). Si no s’utilitza, el degradat no serà visible. S’ha d’utilitzar com a mínim 2 cops. 
+	</p>
+	<h3>SINTAXÍ</h3>
+	<pre>
+	gradient.addColorStop(stop,color);
+	</pre>
+	<h4>Paràmetres</h4>
+	<p>
+	stop =	valor entre 0.0 i 1.0, representa la posició entre el principi i el final del degradat<br>
+	color =	El valor del color CSS que es mostrarà a la posició indicada en l’stop<br>
+	</p>
+
+	<p>
+	Exemple: Degradat lineal horitzontal
+	<p><pre>
+		<code>
+		let ctx= canvas.getContext("2d");
+		let gradient = ctx.createLinearGradient(0,0,0,170);
+		gradient.addColorStop(0,'white'); // de blanc a dalt
+		gradient.addColorStop(1,'red'); // cap a vermell
+		ctx.fillStyle = gradient; // estil de color de dins
+		ctx.fillRect(0,0,200,170);
+		</code>
+	</pre></p>
+	<br>Exemple: Degradat lineal vertical
+	<p><pre>
+		<code>
+		let ctx= canvas.getContext("2d");
+		let gradient = ctx.createLinearGradient(0,0,170,0);
+		gradient.addColorStop(0,'black'); // de negre a l'esquerra
+		gradient.addColorStop(0.5,'red'); // cap a vermell
+		gradient.addColorStop(1,'white'); // cap a blanc
+		ctx.fillStyle = gradient; // estil de color de dins
+		ctx.fillRect(0,0,200,150);
+		</code>
+	</pre></p>
+	<br>Exemple: Degradat lineal horitzontal del marge
+	<p><pre>
+		<code>
+		let ctx= canvas.getContext("2d");
+		let gradient = ctx.createLinearGradient(0,0,170,0);
+		gradient.addColorStop(0,'magenta'); // de magenta a l'esquerra
+		gradient.addColorStop(0.5,'blue'); // cap a blau
+		gradient.addColorStop(1,'red'); // cap a vermell a la dreta
+		ctx.fillStyle = 'pink'; // estil de color de dins
+		ctx.fillRect(0,0,200,150);
+		// omplir amb el degradat
+		ctx.strokeStyle = gradient;
+		ctx.lineWidth = 5;
+		ctx.strokeRect(3,3,195,144);
+		</code>
+	</pre></p>
+	</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web learning">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX">
+    <meta name="author" content="Ester Marsal Roca">
+    <title>COOKIES EN EL CLIENT</title>
+    <script src='./funcions_cookies.js'></script>
+    <script src='./exemple.js'></script>
+  </head> 
+  <body>
+	  <h1>Exemple</h1>
+	  <p><input type='button' value="Crear 1 cookie"></p>
+	  <p><input type='button' value="Recarregar pàgina"></p>
+	  <h1>Exercici</h1>
+	  <p>
+		Dissenyar una funció que permeti esborrar totes les galetes<br>
+		<button> Esborrar totes les cookies </button>
+	  </p>
+	  <p>
+		Dissenyar una funció que permeti veure totes les galetes dins una llista ordenada (etiqueta ol) situada abans de l'última etiqueta script.<br>
+		<input type='button' value="Veure totes les cookies">
+	  </p>
+  <script>
+	  	  if (navigator.cookieEnabled)
+		  {
+			console.info("El navegador té les cookies activades");
+			if (f_hihaCookies())	  
+			{
+				//alert("Hi ha cookies!");
+				console.log(document.cookie);
+			} else{
+				//alert("No hi ha cookies!");
+				conosle.log('no hi ha cookies');
+			}
+		  } else
+		  {
+			alert("Aquesta web necessita treballar amb cookies, però aquest navegador no les té actives!!"+
+			"\nSi vols continuar, activa-les");
+		  }
+	</script>
+  </body>
+</html>
