@@ -53,7 +53,7 @@ function f_dibuxarMapaControls()
     document.body.appendChild(div);
 
     let zoom = 16;
-    map = L.map('map').setView(coordenades, zoom);
+    map = L.map('map', {dragging:false ,tap: false,}).setView(coordenades, zoom);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 20,
         minZoom: 10,
@@ -137,18 +137,14 @@ function f_comprovar_tresor()
     if(tresor[0] < b1[0] && tresor[1] < b1[1] && tresor[0] > b2[0] && tresor[1] > b2[1]){
         moviments.push(tresor);
 
-        f_linia(map, moviments);
+        setTimeout(()=>{f_linia(map, moviments)}, 700);
         
         map.setMinZoom(10);
         map.setMaxZoom(20);
 
         map.setView(moviments[Math.trunc(moviments.length / 2)],12);
         
-        let span_win = document.createElement('span');
-        span_win.id = 'win';
-        span_win.classList.add('win');
-        span_win.textContent = 'Has guanyat!!';
-        document.forms[0].appendChild(span_win);
+        document.getElementById('win').textContent = 'Has guanyat!!';
 
         f_desablitar_form();
 
@@ -235,6 +231,8 @@ function f_reiniciar()
 
     f_habilitar_from();
 
+    document.getElementById('win').textContent = '';
+
     setTimeout(f_calcular_distancia, 500);
 
 }
@@ -254,17 +252,17 @@ function f_controls()
     form.addEventListener('submit',f_accio);
 
     let button_nord = document.createElement('button');
-    button_nord.textContent = 'nord';
+    button_nord.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
     button_nord.id = 'nord';
     let button_sud = document.createElement('button');
     button_sud.id = 'sud';
-    button_sud.textContent = 'sud';
+    button_sud.innerHTML = '<i class="fa-solid fa-arrow-down"></i>';
     let button_oest = document.createElement('button');
     button_oest.id = 'oest';
-    button_oest.textContent = 'oest';
+    button_oest.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
     let button_est = document.createElement('button');
     button_est.id = 'est';
-    button_est.textContent = 'est';
+    button_est.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
 
     form.appendChild(button_nord);
     form.appendChild(button_sud);
@@ -316,17 +314,23 @@ function f_controls()
         form.appendChild(document.createElement('br'));
     }
     
-    let button_reiniciar = document.createElement('button');
-    button_reiniciar.textContent = 'Reiniciar';
+    let button_reiniciar = document.createElement('input');
+    button_reiniciar.type = 'button';
+    button_reiniciar.value = 'Reiniciar';
     button_reiniciar.id = 'reiniciar';
     button_reiniciar.addEventListener('click', f_reiniciar);
     form.appendChild(button_reiniciar);
 
+    let span_win = document.createElement('span');
+    span_win.id = 'win';
+    span_win.classList.add('win');
+    span_win.textContent = '';
+    form.appendChild(span_win);
 
     document.body.appendChild(form);
 }
 
-
+//treure els marcadors y les linies del mapa
 function f_netejarMap() {
     map.eachLayer(function (layer) {
         if (layer instanceof L.Marker || layer instanceof L.Polyline) {
@@ -338,9 +342,9 @@ function f_netejarMap() {
 //funcion para generar aleatorio con decimales
 //https://es.stackoverflow.com/questions/131332/c%C3%B3mo-obtener-un-n%C3%BAmero-aleatorio-con-decimales-y-enteros-en-javascript
 function f_aleatori(minimo, maximo, decimales) {
-    var precision = Math.pow(10, decimales);
+    //var precision = Math.pow(10, decimales);
+    let precision = Math.pow(10, decimales);
     minimo = minimo*precision;
     maximo = maximo*precision;
     return Math.floor(Math.random()*(maximo-minimo+1) + minimo) / precision;
 }
-

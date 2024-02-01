@@ -6,40 +6,49 @@
     <title>Juan Antonio</title>
     <style>
         body{
+            background-color: rgb(49, 49, 49);
             height: 95vh;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
         }
         #map {
             display: flex;
             width: 500px;
             height: 500px;
+            border-radius: 10px;
         }
         form{
             position: relative;
-            width: 300px;
+            width: 400px;
             height: 400px;
             padding: 20px;
         }
         #est{
             position: absolute;
             top: 50%;
-            left: 70%;
+            left: 65%;
         }
         #nord{
             position: absolute;
-            top: 30%;
+            top: 35%;
             left: 50%;
         }
         #sud{
             position: absolute;
-            top: 70%;
+            top: 65%;
             left: 50%;
         }
         #oest{
             position: absolute;
             top: 50%;
-            left: 30%;
+            left: 35%;
             
+        }
+        #reiniciar{
+            position: absolute;
+            top:80%
         }
         .win{
             position: absolute;
@@ -48,8 +57,27 @@
             font-weight: bolder;
             color:tomato;
         }
+        button,#reiniciar{
+            background-color: rgb(255, 228, 196);
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor:pointer;
+            
+            transition: 500ms;
+        }
+        
+        button{
+            width: 50px;
+            height: 50px;
+        }
+        #reiniciar:hover, button:hover{
+            background-color: rgb(132, 119, 102);
+        }
+        
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://kit.fontawesome.com/7a9a6b1d1c.js" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
     <script src="https://unpkg.com/leaflet-geometryutil@0.9.0/leaflet.geometryutil.js" defer></script>
     <script src="script.js" defer></script>
