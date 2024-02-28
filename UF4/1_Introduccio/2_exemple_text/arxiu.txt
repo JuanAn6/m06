@@ -1,3 +1,0 @@
-Hola, benvingut/da a la UF4 del MP06.
-MP06. Desenvolupament Web en entorn client.
-UF4 Comunicació Asíncrona client-servidor. 
