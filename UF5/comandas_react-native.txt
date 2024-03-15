@@ -1,0 +1,9 @@
+comandas react native
+
+npm install -g npm
+
+npx expo install react-native-web react-dom @expo/metro-runtime
+
+npm run web
+
+si meneas el movil menu de expo go
