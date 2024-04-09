@@ -8,7 +8,8 @@ export const UsuariProvider = ({children})=>{
     const [usuari, setUsuari] = useState({
         nom: 'Juan',
         email: 'juan@gmail.com',
-        passwd: '********',
+        password: '********',
+        data_naix: '06/01/2004',
     })
 
     return (
