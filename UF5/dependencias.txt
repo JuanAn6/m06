@@ -7,7 +7,9 @@ crear app react:
     √ Select a variant: » JavaScript + SWC
 
 
+
 Libreria de componentes:
     https://mui.com/material-ui/
     npm install @mui/material @emotion/react @emotion/styled
     npm install @mui/icons-material
+    npm install @iconify/react

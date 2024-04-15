@@ -1,38 +1,116 @@
-import { useState, useContext, useEffect } from 'react'
-import { Card } from './Card'
+import { useContext,useEffect,useState } from 'react'
+import { ProductesContext } from '../context/ProductesContext'
+import { Card } from '../components/Card'
+import { CarroContext } from '../context/CarroContext'
+
 export const ProductesScreen = () =>
 {
-	const [isLoad, setIsLoad] = useState(false);
+	
+	const { productes, isLoad } = useContext(ProductesContext)
 
-	const [productes, setProductes] = useState([]);
+	const {
+        llistaCompres, 
+        afegirCompra, 
+        eliminarCompra, 
+        aumentarQuantitat, 
+        disminuirQuantitat
+    } = useContext(CarroContext)
 
-	const fetchProductes = async () =>{
-		const response = await fetch('https://fakestoreapi.com/products')
-		const data = await response.json()
-		console.log(data)
-		setProductes(data);
-		setIsLoad(true)
+
+	const [selectedOption, setSelectedOption] = useState();
+	const [options, setOptions] = useState([]);
+
+	const [productesShow, setProductesShow] = useState([]);
+
+	const handleAfegir = (prod)=>{
+		
+		productes.map((e)=>{
+			if(e.id == prod.id){
+				e.added = true
+			}
+			return e
+		})
+
+		afegirCompra(prod)
 	}
 
-	useEffect( ()=>{
-		fetchProductes()
-	}, [])
+	const handleEliminar = (prod)=>{
+		productes.map((e)=>{
+			if(e.id == prod.id){
+				e.added = false
+			}
+			return e
+		})
+
+		eliminarCompra(prod.id)
+	}
+
+	
+
+	useEffect(()=>{
+		if(isLoad){
+
+			//carrega dels productes
+			setProductesShow(productes);
+
+			//carrega del select
+			let ops = [];
+			productes.map((e, i, a)=>{
+				if(!ops.includes(e.category)){
+					ops.push(e.category);
+				}
+			});
+			setOptions(ops);
+		}
+	}, [isLoad])
+	
+
+	const handleSelectChange = (evt) => {
+
+		setSelectedOption(evt.target.value);
+		if(evt.target.value != '-1'){
+			setProductesShow(productes.filter((e)=>{return e.category == evt.target.value}));
+		}else{
+			setProductesShow(productes);
+		}
+
+	};
 
 	return(
 	<>
 			<h2>Productes Screen</h2>
+			
+			
+			
 			{!isLoad ? 
 				<p>Loading...</p>
 			:
-				productes.map((p,i)=>
-					<Card 
-						key={i}
-						imatge={p.image}
-						titol={p.title}
-						descripcio={p.description}
-						preu={p.price}
-					></Card>
-				)
+				<div>
+					<div className="d-flex">
+						<select value={selectedOption} onChange={handleSelectChange} className="m-3 form-select w-auto bg-secondary text-white ">
+							<option value="-1">Selecciona categoria</option>
+							{	options.map((op, i) => 
+									<option key={op} value={op}>{op}</option>
+								)
+							}
+						</select>
+					</div>
+					<div>
+						{	productesShow.map((p,i)=>
+								<Card 
+									key={i}
+									imatge={p.image}
+									titol={p.title}
+									descripcio={p.description}
+									preu={p.price}
+									handleAfegir={()=>{ handleAfegir(p)}}
+									handleEliminar={()=>{ handleEliminar(p)}}
+									isAdded={p.added ? true : false}
+								></Card>
+							)
+						}
+					</div>
+				</div>
 			}
 	</>
 	)

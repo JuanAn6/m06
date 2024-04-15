@@ -47,3 +47,14 @@
 .navbar{
     border-radius: 10px;
 }
+
+.icon-carro-custom{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.custom-no-products{
+    background-color: #ccc;
+    color: rgb(87, 87, 87) !important;
+    border-radius: 20px;
+}
