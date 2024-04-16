@@ -80,8 +80,6 @@ export const ProductesScreen = () =>
 	<>
 			<h2>Productes Screen</h2>
 			
-			
-			
 			{!isLoad ? 
 				<p>Loading...</p>
 			:
@@ -95,20 +93,24 @@ export const ProductesScreen = () =>
 							}
 						</select>
 					</div>
-					<div>
-						{	productesShow.map((p,i)=>
-								<Card 
-									key={i}
-									imatge={p.image}
-									titol={p.title}
-									descripcio={p.description}
-									preu={p.price}
-									handleAfegir={()=>{ handleAfegir(p)}}
-									handleEliminar={()=>{ handleEliminar(p)}}
-									isAdded={p.added ? true : false}
-								></Card>
-							)
-						}
+					<div className="container-fluid">
+						<div className='row'>
+							{	productesShow.map((p,i)=>
+								<div className="col-12 col-md-6 col-lg-4 my-2">
+									<Card 
+										imatge={p.image}
+										titol={p.title}
+										descripcio={p.description}
+										categria={p.category}
+										preu={p.price}
+										handleAfegir={()=>{ handleAfegir(p)}}
+										handleEliminar={()=>{ handleEliminar(p)}}
+										isAdded={p.added ? true : false}
+									></Card>
+								</div>
+								)
+							}
+						</div>
 					</div>
 				</div>
 			}
