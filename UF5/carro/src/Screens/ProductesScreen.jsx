@@ -2,6 +2,7 @@ import { useContext,useEffect,useState } from 'react'
 import { ProductesContext } from '../context/ProductesContext'
 import { Card } from '../components/Card'
 import { CarroContext } from '../context/CarroContext'
+import { Icon } from '@iconify/react'
 
 export const ProductesScreen = () =>
 {
@@ -81,7 +82,9 @@ export const ProductesScreen = () =>
 			<h2>Productes Screen</h2>
 			
 			{!isLoad ? 
-				<p>Loading...</p>
+				<div className="d-flex w-100 justify-content-center align-items-center ">
+					<Icon className="loading" icon="line-md:loading-twotone-loop" />
+				</div>
 			:
 				<div>
 					<div className="d-flex">
@@ -96,7 +99,7 @@ export const ProductesScreen = () =>
 					<div className="container-fluid">
 						<div className='row'>
 							{	productesShow.map((p,i)=>
-								<div className="col-12 col-md-6 col-lg-4 my-2">
+								<div key={i} className="col-12 col-md-6 col-lg-4 my-2">
 									<Card 
 										imatge={p.image}
 										titol={p.title}

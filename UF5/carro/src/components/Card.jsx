@@ -18,8 +18,10 @@ export const Card = ({imatge, titol, descripcio, categria, preu, handleAfegir, h
     }
 
     return(
-        <div className="tarjeta w-100 ">
-            <img src={imatge} alt={titol} className="tarjeta-imagen"></img>
+        <div className="tarjeta w-100 align-content-between">
+            <div className="d-flex justify-content-center w-100">
+                <img src={imatge} alt={titol} className="tarjeta-imagen"></img>
+            </div>
             <div className="tarjeta-contenido">
                 <h3 className="tarjeta-titulo">{titol}</h3>
                 <p className="tarjeta-descripcion">{descripcio}</p>

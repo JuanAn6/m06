@@ -1,14 +1,18 @@
 /* Estilos para la tarjeta */
 .tarjeta {
     display: flex;
-    border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 100%;
     background-color: #ccc;
+    flex-direction: column;
   }
+
+.dark-mode .tarjeta {
+  background-color: #454545;
+}
   
   .tarjeta-imagen {
     width: 150px;

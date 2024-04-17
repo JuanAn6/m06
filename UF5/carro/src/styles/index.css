@@ -58,3 +58,31 @@
     color: rgb(87, 87, 87) !important;
     border-radius: 20px;
 }
+
+.loading{
+    width: 70px;
+    height: auto;
+}
+
+.dark-mode{
+    background-color: #242424;
+    color: whitesmoke !important;
+}
+
+.dark-mode .navbar{
+    border-radius: 10px;
+    background-color: rgb(58, 57, 59) !important;
+    
+}
+.dark-mode .nav-link{
+    color:whitesmoke !important;
+}
+.dark-mode .nav-item{
+    color:whitesmoke !important;
+}
+
+.dark-mode .custom-no-products{
+    background-color: #535353;
+    color: rgb(169, 169, 169) !important;
+    border-radius: 20px;
+}
