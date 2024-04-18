@@ -11,24 +11,38 @@ export const NavBar = () =>
     const { llistaCompres } = useContext(CarroContext)
     
     const modeToggleBtn = document.getElementById('mode-toggle-btn');
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
-
-    useEffect(()=>{ 
-        setIsDarkMode(localStorage.getItem('color-mode'));
-
-        document.body.classList.toggle('dark-mode', isDarkMode);
-        document.body.classList.toggle('light-mode', !isDarkMode);
-    },[])
-
-    const handleColorMode = ()=>{
+    const [color, setColor] = useState(()=>{
+        let initial = localStorage.getItem('color-mode');
         
-        setIsDarkMode(!isDarkMode);
+        if(initial == 'red'){
+            document.body.classList.toggle('dark-mode', true);
+        }else{
+            document.body.classList.toggle('dark-mode', false);
+        }
+        console.log('initial: ', initial);
+        return initial;
+    });
 
-        document.body.classList.toggle('dark-mode', isDarkMode);
-        document.body.classList.toggle('light-mode', !isDarkMode);
+    const handleColorMode = (x)=>{
+        
+        //setColor(localStorage.getItem('color-mode'));
+        setColor(x);
 
-        localStorage.setItem('color-mode', isDarkMode);
+        if(color == 'red'){
+            document.body.classList.toggle('dark-mode', true);
+        }else{
+            document.body.classList.toggle('dark-mode', false);
+        }
+        
+        localStorage.setItem('color-mode', color); 
+
+        console.log(color)
+        
+        // document.body.classList.toggle('dark-mode', isDarkMode);
+        // document.body.classList.toggle('light-mode', !isDarkMode);
+        // localStorage.setItem('color-mode', isDarkMode);
+        // console.log(localStorage.getItem('color-mode'));
     }
 
     return (
@@ -42,13 +56,16 @@ export const NavBar = () =>
                                     <NavLink to="/productes" className="nav-link" aria-current="page">Products</NavLink>
                             </li>
                         </ul>
-                        <button className="btn nav-item" onClick={handleColorMode}>
-                            { isDarkMode ? 
-                                <Icon icon="material-symbols:sunny-outline-rounded" />
+                        
+                            { color != 'red' ? 
+                                <button className="btn nav-item" onClick={()=>handleColorMode('red')}>
+                                    <Icon icon="material-symbols:sunny-outline-rounded" />
+                                </button>
                             :
-                                <Icon icon="ph:moon-stars-light" />
+                                <button className="btn nav-item" onClick={()=>handleColorMode('none')}>
+                                    <Icon icon="ph:moon-stars-light" />
+                                </button>
                             }
-                        </button>
                         <NavLink className="mx-2" to="/carro" >
                                 <Badge badgeContent={llistaCompres.length} color="secondary">
                                         <ShoppingCart color="primary" />
@@ -61,4 +78,4 @@ export const NavBar = () =>
     )
 }
 
-export default NavBar;
+export default NavBar;
